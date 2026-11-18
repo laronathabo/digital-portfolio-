@@ -1,0 +1,925 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#351c2a">
+    <title>Curriculum Vitae — Larona Thabo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cherry: #b21e35;
+            --raspberry: #ef476f;
+            --blush: #f4a6b8;
+            --vanilla: #fff0e5;
+            --burgundy: #351c2a;
+            --white: #fffaf6;
+            --muted: #846c74;
+            --line: rgba(53, 28, 42, 0.14);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--vanilla);
+            color: var(--burgundy);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .top-strip {
+            background: var(--cherry);
+            color: white;
+            padding: 9px 5%;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 9px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        header {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 23px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .brand {
+            font-family: "Playfair Display", serif;
+            font-size: 23px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .brand span {
+            color: var(--cherry);
+            font-style: italic;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 12px 18px;
+        }
+
+        nav a {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--muted);
+            transition: color .2s;
+        }
+
+        nav a:hover,
+        nav a[aria-current="page"] {
+            color: var(--cherry);
+        }
+
+        .page-intro {
+            max-width: 1200px;
+            width: 90%;
+            margin: auto;
+            padding: 66px 0 48px;
+        }
+
+        .eyebrow {
+            color: var(--cherry);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .page-intro h1 {
+            max-width: 800px;
+            margin-top: 14px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(48px, 7vw, 86px);
+            font-weight: 500;
+            line-height: 1.05;
+            letter-spacing: -3px;
+        }
+
+        .page-intro h1 em {
+            color: var(--cherry);
+        }
+
+        .page-intro p {
+            max-width: 610px;
+            margin-top: 20px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .resume {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 85px;
+            display: grid;
+            grid-template-columns: 310px minmax(0, 1fr);
+            align-items: stretch;
+            box-shadow: 0 18px 55px rgba(53, 28, 42, .09);
+        }
+
+        .sidebar {
+            padding: 36px 29px;
+            background: var(--burgundy);
+            color: var(--vanilla);
+        }
+
+        .profile-mark {
+            width: 100%;
+            min-height: 155px;
+            padding: 23px;
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: var(--cherry);
+        }
+
+        .profile-mark .mini {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .profile-mark .big {
+            font-family: "Playfair Display", serif;
+            font-size: 39px;
+            line-height: 1.08;
+        }
+
+        .profile-mark .big em {
+            color: var(--blush);
+        }
+
+        .sidebar-section {
+            margin-top: 30px;
+        }
+
+        .sidebar-section h2 {
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 240, 229, .25);
+            color: var(--blush);
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contact-item {
+            margin-top: 16px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-item .label {
+            display: block;
+            color: #d6bac4;
+            font-size: 10px;
+        }
+
+        .contact-item .value {
+            font-size: 12px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .sidebar li {
+            position: relative;
+            padding: 7px 0 7px 15px;
+            color: #f0dfe4;
+            font-size: 12px;
+        }
+
+        .sidebar li::before {
+            content: "✳";
+            position: absolute;
+            left: 0;
+            color: var(--blush);
+            font-size: 9px;
+        }
+
+        .sidebar-note {
+            margin-top: 34px;
+            padding: 17px;
+            border: 1px solid rgba(255, 240, 229, .25);
+            color: #e9d7de;
+            font-family: "Playfair Display", serif;
+            font-size: 17px;
+            font-style: italic;
+            line-height: 1.45;
+        }
+
+        .resume-main {
+            min-width: 0;
+            padding: 42px 42px 50px;
+            background: var(--white);
+        }
+
+        .resume-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            padding-bottom: 26px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .resume-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 4vw, 45px);
+            font-weight: 500;
+            line-height: 1.1;
+        }
+
+        .resume-heading p {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .year-label {
+            flex-shrink: 0;
+            padding: 7px 10px;
+            border: 1px solid var(--blush);
+            color: var(--cherry);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .resume-section {
+            padding-top: 29px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 19px;
+        }
+
+        .section-title .num {
+            color: var(--cherry);
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+        }
+
+        .section-title h3 {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .entry {
+            position: relative;
+            margin-left: 5px;
+            padding: 0 0 23px 22px;
+            border-left: 1px solid var(--blush);
+        }
+
+        .entry:last-child {
+            padding-bottom: 0;
+        }
+
+        .entry::before {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: -5px;
+            width: 9px;
+            height: 9px;
+            background: var(--cherry);
+            border: 2px solid var(--white);
+            border-radius: 50%;
+            outline: 1px solid var(--cherry);
+        }
+
+        .entry-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 5px 15px;
+        }
+
+        .entry h4 {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .entry .date {
+            color: var(--cherry);
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .entry .institution {
+            margin-top: 3px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .entry p {
+            margin-top: 8px;
+            color: #6f5c63;
+            font-size: 12px;
+        }
+
+        .entry ul {
+            padding-left: 17px;
+            margin-top: 8px;
+            color: #6f5c63;
+            font-size: 12px;
+        }
+
+        .entry li {
+            margin-bottom: 5px;
+        }
+
+        .skill-groups {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .skill-box {
+            padding: 16px;
+            background: var(--vanilla);
+            border-top: 2px solid var(--cherry);
+        }
+
+        .skill-box h4 {
+            margin-bottom: 7px;
+            font-size: 12px;
+        }
+
+        .skill-box p {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .career-note {
+            margin-top: 28px;
+            padding: 24px;
+            background: #f8e1e5;
+            border-left: 3px solid var(--cherry);
+        }
+
+        .career-note .label {
+            color: var(--cherry);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .career-note p {
+            margin-top: 8px;
+            font-family: "Playfair Display", serif;
+            font-size: 19px;
+            line-height: 1.5;
+        }
+
+        .resume-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .btn {
+            padding: 12px 18px;
+            border: 1px solid var(--cherry);
+            background: var(--cherry);
+            color: white;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 11px;
+            font-weight: 700;
+            transition: background .2s;
+        }
+
+        .btn:hover {
+            background: var(--burgundy);
+            border-color: var(--burgundy);
+        }
+
+        .btn.outline {
+            background: transparent;
+            color: var(--cherry);
+        }
+
+        .btn.outline:hover {
+            background: var(--vanilla);
+        }
+
+        .next-page {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 75px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            background: var(--blush);
+        }
+
+        .next-page p {
+            color: var(--burgundy);
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .next-page h3 {
+            margin-top: 4px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(23px, 3vw, 34px);
+            font-weight: 500;
+        }
+
+        .next-page a {
+            flex-shrink: 0;
+            padding: 12px 16px;
+            background: var(--burgundy);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 24px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 12px;
+            background: var(--burgundy);
+            color: #e9d7de;
+            font-size: 10px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: flex-start;
+            }
+
+            .resume {
+                grid-template-columns: 250px minmax(0, 1fr);
+            }
+
+            .sidebar {
+                padding: 28px 20px;
+            }
+
+            .resume-main {
+                padding: 32px 25px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .top-strip {
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .resume {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                padding: 27px;
+            }
+
+            .profile-mark {
+                min-height: 130px;
+            }
+
+            .sidebar-note {
+                max-width: 380px;
+            }
+
+            .resume-main {
+                padding: 29px 22px 35px;
+            }
+
+            .resume-heading {
+                flex-direction: column;
+            }
+
+            .skill-groups {
+                grid-template-columns: 1fr;
+            }
+
+            .next-page {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 24px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .top-strip,
+            header,
+            .page-intro,
+            .resume-actions,
+            .next-page,
+            footer {
+                display: none !important;
+            }
+
+            .resume {
+                width: 100%;
+                max-width: none;
+                margin: 0;
+                box-shadow: none;
+                grid-template-columns: 29% 71%;
+            }
+
+            .sidebar,
+            .resume-main {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .resume-main {
+                padding: 25px;
+            }
+
+            .sidebar {
+                padding: 25px 18px;
+            }
+
+            .resume-section {
+                break-inside: avoid;
+            }
+
+            .entry {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-strip">
+        <span>Personal Portfolio · 2026</span>
+        <span>Curiosity is a career advantage ✳</span>
+    </div>
+
+    <header>
+        <a class="brand" href="index.html">Larona Thabo<span>.</span></a>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="cv.html" aria-current="page">My CV</a>
+            <a href="individual-reflection.html">Reflection</a>
+            <a href="group-reflection.html">Group Work</a>
+            <a href="skills-project.html">Skills Project</a>
+            <a href="application-letter.html">Application</a>
+            <a href="email-template.html">Email</a>
+            <a href="study-resources.html">Resources</a>
+        </nav>
+    </header>
+
+    <section class="page-intro">
+        <div class="eyebrow">A snapshot of my journey</div>
+        <h1>My experience.<br>My ambition. <em>My next chapter.</em></h1>
+        <p>
+            A record of my education, developing skills and leadership
+            experience as I prepare for a future in Business Intelligence
+            and Data Analytics.
+        </p>
+    </section>
+
+    <main class="resume">
+        <aside class="sidebar">
+            <div class="profile-mark">
+                <div class="mini">Professional profile / 01</div>
+                <div class="big">A mind<br>for <em>data.</em></div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Contact</h2>
+
+                <div class="contact-item">
+                    <span class="label">Email</span>
+                    <span class="value">thabolarona1@icloud.com</span>
+                </div>
+
+                <div class="contact-item">
+                    <span class="label">Institution</span>
+                    <span class="value">Botswana Accountancy College</span>
+                </div>
+
+                <div class="contact-item">
+                    <span class="label">Programme</span>
+                    <span class="value">Business Intelligence and Data Analytics</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Technical toolkit</h2>
+                <ul>
+                    <li>Microsoft Excel</li>
+                    <li>Microsoft PowerPoint</li>
+                    <li>Basic SQL</li>
+                    <li>Report Writing</li>
+                    <li>Presentation Skills</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Personal strengths</h2>
+                <ul>
+                    <li>Critical thinking</li>
+                    <li>Organisation</li>
+                    <li>Reliability</li>
+                    <li>Communication</li>
+                    <li>Teamwork</li>
+                    <li>Attention to detail</li>
+                    <li>Perseverance</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>Interests</h2>
+                <ul>
+                    <li>Banking analytics</li>
+                    <li>Data visualisation</li>
+                    <li>Netball</li>
+                    <li>Creative writing</li>
+                    <li>Music</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-note">
+                “I see every challenge as an opportunity to learn something I didn't know yesterday.”
+            </div>
+        </aside>
+
+        <div class="resume-main">
+            <div class="resume-heading">
+                <div>
+                    <h2>Larona Thabo</h2>
+                    <p>Business Intelligence & Data Analytics Student</p>
+                </div>
+                <span class="year-label">YEAR ONE · 2026</span>
+            </div>
+
+            <section class="resume-section">
+                <div class="section-title">
+                    <span class="num">01</span>
+                    <h3>Professional Profile</h3>
+                </div>
+
+                <p style="font-size:13px; color:#6f5c63;">
+                    I am a hardworking and determined first-year student
+                    pursuing Business Intelligence and Data Analytics at
+                    Botswana Accountancy College. I enjoy working through
+                    challenging tasks because they strengthen my critical
+                    thinking and encourage me to grow. I am interested in
+                    how data analysis, dashboards and visualisation help
+                    organisations make informed decisions. My career goal
+                    is to enter the banking industry as a Data Analyst and
+                    develop into a trusted Business Intelligence professional.
+                </p>
+            </section>
+
+            <section class="resume-section">
+                <div class="section-title">
+                    <span class="num">02</span>
+                    <h3>Education</h3>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-top">
+                        <h4>Business Intelligence and Data Analytics</h4>
+                        <span class="date">2026 – Present</span>
+                    </div>
+                    <div class="institution">Botswana Accountancy College (BAC)</div>
+                    <p>
+                        First-year student developing a foundation in business
+                        intelligence, data analysis and professional communication
+                        through coursework and presentations.
+                    </p>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-top">
+                        <h4>International General Certificate of Secondary Education</h4>
+                        <span class="date">Completed 2025</span>
+                    </div>
+                    <div class="institution">Saint Kizito Catholic School</div>
+                    <p>
+                        Completed IGCSE studies, building the academic foundation
+                        for further education.
+                    </p>
+                </div>
+            </section>
+
+            <section class="resume-section">
+                <div class="section-title">
+                    <span class="num">03</span>
+                    <h3>Leadership Experience</h3>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-top">
+                        <h4>Deputy Head Girl</h4>
+                        <span class="date">2025</span>
+                    </div>
+                    <div class="institution">Saint Kizito Catholic School</div>
+                    <ul>
+                        <li>Supported the Head Girl in student leadership responsibilities.</li>
+                        <li>Represented the student body and contributed to maintaining discipline.</li>
+                        <li>Developed an appreciation for respectful leadership, responsibility and confidence.</li>
+                        <li>Gained experience balancing leadership duties with school commitments.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="resume-section">
+                <div class="section-title">
+                    <span class="num">04</span>
+                    <h3>Academic Development</h3>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-top">
+                        <h4>Coursework and Presentations</h4>
+                        <span class="date">Ongoing</span>
+                    </div>
+                    <div class="institution">Botswana Accountancy College</div>
+                    <p>
+                        Engaging with course projects and presentations that
+                        provide opportunities to practise research, organise
+                        information, communicate ideas and strengthen my
+                        understanding of Business Intelligence and Data Analytics.
+                    </p>
+                </div>
+            </section>
+
+            <section class="resume-section">
+                <div class="section-title">
+                    <span class="num">05</span>
+                    <h3>Skills Overview</h3>
+                </div>
+
+                <div class="skill-groups">
+                    <div class="skill-box">
+                        <h4>Technical Skills</h4>
+                        <p>
+                            Microsoft Excel, Microsoft PowerPoint, basic SQL,
+                            report writing and foundational data-analysis knowledge.
+                        </p>
+                    </div>
+
+                    <div class="skill-box">
+                        <h4>Professional Skills</h4>
+                        <p>
+                            Communication, teamwork, organisation,
+                            reliability and attention to detail.
+                        </p>
+                    </div>
+
+                    <div class="skill-box">
+                        <h4>Thinking Skills</h4>
+                        <p>
+                            Critical thinking, persistence, problem-solving
+                            and willingness to learn.
+                        </p>
+                    </div>
+
+                    <div class="skill-box">
+                        <h4>Leadership</h4>
+                        <p>
+                            Student representation, responsibility and
+                            respectful collaboration.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="resume-section">
+                <div class="section-title">
+                    <span class="num">06</span>
+                    <h3>Experience & Opportunities</h3>
+                </div>
+
+                <div class="entry">
+                    <h4>Industrial Attachment Aspirations</h4>
+                    <div class="institution">Data Analyst / Business Intelligence Intern</div>
+                    <p>
+                        I am seeking an opportunity to gain practical experience,
+                        preferably within a bank, where I can learn how data is
+                        collected, analysed and used to support business decisions.
+                        I am also open to suitable volunteering and community
+                        opportunities that will help me develop professionally.
+                    </p>
+                </div>
+            </section>
+
+            <section class="resume-section">
+                <div class="section-title">
+                    <span class="num">07</span>
+                    <h3>Achievements & Activities</h3>
+                </div>
+
+                <div class="entry">
+                    <h4>Deputy Head Girl — 2025</h4>
+                    <p>
+                        Held a student leadership position at Saint Kizito
+                        Catholic School.
+                    </p>
+                </div>
+
+                <div class="entry">
+                    <h4>Netball and Writing</h4>
+                    <p>
+                        Participate in netball and pursue creative writing
+                        as personal interests that support self-expression
+                        and personal development.
+                    </p>
+                </div>
+            </section>
+
+            <div class="career-note">
+                <div class="label">Career direction</div>
+                <p>
+                    My goal is to use data to help banks understand customers,
+                    improve services and make decisions supported by evidence.
+                </p>
+            </div>
+
+            <div class="resume-actions">
+                <button class="btn" type="button" onclick="window.print()">
+                    PRINT / SAVE AS PDF ↗
+                </button>
+                <a class="btn outline" href="application-letter.html">
+                    VIEW APPLICATION LETTER →
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <section class="next-page">
+        <div>
+            <p>Next chapter · 03</p>
+            <h3>Learning about myself through reflection.</h3>
+        </div>
+        <a href="individual-reflection.html">INDIVIDUAL REFLECTION ↗</a>
+    </section>
+
+    <footer>
+        <span>© 2026 <strong>Larona Thabo</strong></span>
+        <span>Business Intelligence & Data Analytics · BAC</span>
+        <span>Cherry Glacé Portfolio 🍒</span>
+    </footer>
+
+</body>
+</html>
