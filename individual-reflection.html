@@ -1,0 +1,798 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff0e5">
+    <title>Individual Reflection — Larona Thabo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cherry: #b21e35;
+            --raspberry: #ef476f;
+            --blush: #f4a6b8;
+            --vanilla: #fff0e5;
+            --burgundy: #351c2a;
+            --white: #fffaf6;
+            --muted: #806971;
+            --line: rgba(53, 28, 42, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--vanilla);
+            color: var(--burgundy);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.8;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .topline {
+            height: 6px;
+            background: linear-gradient(
+                90deg,
+                var(--cherry) 0 35%,
+                var(--raspberry) 35% 65%,
+                var(--blush) 65% 100%
+            );
+        }
+
+        header {
+            width: 90%;
+            max-width: 1160px;
+            margin: auto;
+            padding: 22px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .brand {
+            font-family: "Playfair Display", serif;
+            font-size: 23px;
+            font-weight: 600;
+        }
+
+        .brand span {
+            color: var(--cherry);
+            font-style: italic;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 12px 17px;
+        }
+
+        nav a {
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        nav a:hover,
+        nav a[aria-current="page"] {
+            color: var(--cherry);
+        }
+
+        .intro {
+            width: 90%;
+            max-width: 1160px;
+            margin: auto;
+            padding: 78px 0 64px;
+        }
+
+        .eyebrow {
+            color: var(--cherry);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .intro h1 {
+            max-width: 900px;
+            margin-top: 18px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(48px, 8vw, 98px);
+            font-weight: 500;
+            line-height: 1.02;
+            letter-spacing: -4px;
+        }
+
+        .intro h1 em {
+            color: var(--cherry);
+        }
+
+        .intro-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 30px;
+            margin-top: 32px;
+        }
+
+        .intro-bottom p {
+            max-width: 560px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .issue-label {
+            flex-shrink: 0;
+            padding: 10px 14px;
+            border: 1px solid var(--blush);
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .quote-band {
+            padding: 30px 5%;
+            background: var(--cherry);
+            color: white;
+            text-align: center;
+        }
+
+        .quote-band p {
+            max-width: 850px;
+            margin: auto;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(22px, 3.5vw, 36px);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .quote-band span {
+            display: block;
+            margin-top: 10px;
+            color: var(--blush);
+            font-family: "DM Sans", sans-serif;
+            font-size: 9px;
+            font-style: normal;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .reflection-layout {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 85px 0;
+            display: grid;
+            grid-template-columns: 235px minmax(0, 1fr);
+            gap: 65px;
+            align-items: start;
+        }
+
+        .contents {
+            position: sticky;
+            top: 20px;
+            padding: 25px;
+            background: var(--white);
+            border: 1px solid var(--line);
+        }
+
+        .contents h2 {
+            margin-bottom: 18px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contents a {
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .contents a:last-child {
+            border-bottom: 0;
+        }
+
+        .contents a:hover {
+            color: var(--cherry);
+        }
+
+        .contents a span {
+            margin-right: 8px;
+            color: var(--cherry);
+            font-weight: 700;
+        }
+
+        .reflection-content {
+            min-width: 0;
+        }
+
+        .opening-note {
+            padding: 27px 30px;
+            margin-bottom: 42px;
+            background: #f8dce3;
+            border-left: 4px solid var(--cherry);
+        }
+
+        .opening-note .label {
+            color: var(--cherry);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .opening-note p {
+            margin-top: 9px;
+            font-family: "Playfair Display", serif;
+            font-size: 23px;
+            line-height: 1.5;
+        }
+
+        .reflection-section {
+            padding: 0 0 38px;
+            margin-bottom: 38px;
+            border-bottom: 1px solid var(--line);
+            scroll-margin-top: 25px;
+        }
+
+        .reflection-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-top {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .section-number {
+            flex-shrink: 0;
+            color: var(--cherry);
+            font-family: "Playfair Display", serif;
+            font-size: 42px;
+            line-height: 1.1;
+        }
+
+        .section-top h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(25px, 3.2vw, 35px);
+            font-weight: 500;
+            line-height: 1.25;
+        }
+
+        .section-top .subtitle {
+            display: block;
+            margin-top: 5px;
+            color: var(--muted);
+            font-family: "DM Sans", sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .reflection-section p {
+            margin-bottom: 15px;
+            color: #6f5962;
+            font-size: 13px;
+        }
+
+        .reflection-section strong {
+            color: var(--burgundy);
+        }
+
+        .pull-quote {
+            margin: 24px 0;
+            padding: 23px 25px;
+            background: var(--white);
+            border-left: 2px solid var(--raspberry);
+            font-family: "Playfair Display", serif;
+            font-size: 21px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 13px;
+            margin: 23px 0;
+        }
+
+        .learning-card {
+            padding: 19px;
+            background: var(--white);
+            border: 1px solid var(--line);
+        }
+
+        .learning-card .symbol {
+            color: var(--cherry);
+            font-size: 20px;
+        }
+
+        .learning-card h3 {
+            margin-top: 8px;
+            font-size: 12px;
+        }
+
+        .learning-card p {
+            margin: 6px 0 0;
+            font-size: 11px;
+        }
+
+        .closing-reflection {
+            padding: 32px;
+            background: var(--burgundy);
+            color: var(--vanilla);
+        }
+
+        .closing-reflection .eyebrow {
+            color: var(--blush);
+        }
+
+        .closing-reflection h2 {
+            margin-top: 12px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(29px, 4vw, 42px);
+            font-weight: 500;
+            line-height: 1.25;
+        }
+
+        .closing-reflection p {
+            margin-top: 15px;
+            color: #ead9df;
+            font-size: 13px;
+        }
+
+        .next-page {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto 80px;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            background: var(--blush);
+        }
+
+        .next-page .label {
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .next-page h2 {
+            margin-top: 4px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(23px, 3vw, 34px);
+            font-weight: 500;
+        }
+
+        .next-page a {
+            flex-shrink: 0;
+            padding: 13px 17px;
+            background: var(--burgundy);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 24px 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            background: var(--burgundy);
+            color: #e8d7dc;
+            font-size: 10px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: flex-start;
+            }
+
+            .reflection-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 60px 0;
+            }
+
+            .contents {
+                position: static;
+            }
+
+            .contents nav {
+                display: block;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .intro {
+                padding: 55px 0 45px;
+            }
+
+            .intro h1 {
+                font-size: 53px;
+                letter-spacing: -2px;
+            }
+
+            .intro-bottom {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .reflection-layout {
+                padding: 45px 0;
+            }
+
+            .opening-note,
+            .closing-reflection {
+                padding: 23px;
+            }
+
+            .opening-note p {
+                font-size: 20px;
+            }
+
+            .section-number {
+                font-size: 34px;
+            }
+
+            .learning-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .next-page {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 23px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topline"></div>
+
+    <header>
+        <a class="brand" href="index.html">Larona Thabo<span>.</span></a>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="cv.html">My CV</a>
+            <a href="individual-reflection.html" aria-current="page">Reflection</a>
+            <a href="group-reflection.html">Group Work</a>
+            <a href="skills-project.html">Skills Project</a>
+            <a href="application-letter.html">Application</a>
+            <a href="email-template.html">Email</a>
+            <a href="study-resources.html">Resources</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <div class="eyebrow">Personal journal · Chapter one</div>
+
+            <h1>
+                Growing into<br>
+                the person <em>I'm becoming.</em>
+            </h1>
+
+            <div class="intro-bottom">
+                <p>
+                    Learning is not always about getting everything right
+                    the first time. Sometimes it is about recognising what
+                    I do not know, being willing to ask questions and finding
+                    the courage to keep going.
+                </p>
+
+                <div class="issue-label">My learning journey / 2026</div>
+            </div>
+        </section>
+
+        <section class="quote-band">
+            <p>
+                “I don't have to know everything today.
+                I just have to be willing to learn.”
+            </p>
+            <span>A reminder to myself</span>
+        </section>
+
+        <div class="reflection-layout">
+
+            <aside class="contents">
+                <h2>In this reflection</h2>
+                <a href="#beginning"><span>01</span> My starting point</a>
+                <a href="#challenges"><span>02</span> Facing challenges</a>
+                <a href="#development"><span>03</span> Skills I'm building</a>
+                <a href="#future"><span>04</span> Looking ahead</a>
+            </aside>
+
+            <article class="reflection-content">
+
+                <div class="opening-note">
+                    <div class="label">Before I begin</div>
+                    <p>
+                        I am learning to appreciate progress, even when
+                        it happens slowly and quietly.
+                    </p>
+                </div>
+
+                <section class="reflection-section" id="beginning">
+                    <div class="section-top">
+                        <span class="section-number">01</span>
+                        <h2>
+                            Starting with curiosity
+                            <span class="subtitle">My experience as a first-year student</span>
+                        </h2>
+                    </div>
+
+                    <p>
+                        Beginning my studies in Business Intelligence and
+                        Data Analytics at Botswana Accountancy College has
+                        given me an opportunity to explore an area that
+                        connects with the way I like to think. I have always
+                        enjoyed challenges because they make me stop,
+                        consider different possibilities and work towards
+                        understanding something properly.
+                    </p>
+
+                    <p>
+                        As I learn more about data and its role in business,
+                        I am beginning to appreciate that information is
+                        valuable when people know how to interpret it and
+                        use it responsibly. I am particularly interested
+                        in the banking industry because banks need to
+                        understand their customers, recognise patterns
+                        and make decisions that support better services.
+                    </p>
+
+                    <p>
+                        I know that I am still at the beginning of my
+                        professional journey. Rather than expecting myself
+                        to have all the answers, I want to approach my
+                        studies with an open mind, a willingness to practise
+                        and a determination to improve.
+                    </p>
+
+                    <div class="pull-quote">
+                        My starting point is not a limitation.
+                        It is an opportunity to build a strong foundation.
+                    </div>
+                </section>
+
+                <section class="reflection-section" id="challenges">
+                    <div class="section-top">
+                        <span class="section-number">02</span>
+                        <h2>
+                            Learning through difficulty
+                            <span class="subtitle">Patience, effort and critical thinking</span>
+                        </h2>
+                    </div>
+
+                    <p>
+                        One thing I understand about myself is that I do
+                        not enjoy giving up simply because something is
+                        difficult. I would rather spend time trying to
+                        understand it than pretend I know something when
+                        I do not. This attitude is important in a field
+                        where information must be examined carefully and
+                        conclusions should be supported by evidence.
+                    </p>
+
+                    <p>
+                        Studying a subject that involves data and analytical
+                        thinking also reminds me that being hardworking
+                        is not only about spending more time on a task.
+                        It is about learning to approach problems logically,
+                        checking my understanding and recognising when
+                        I need to find another explanation or ask for help.
+                    </p>
+
+                    <p>
+                        I want to continue developing the confidence to
+                        ask questions, learn from mistakes and accept
+                        constructive feedback. I see these habits as
+                        part of becoming an independent learner rather
+                        than signs of weakness.
+                    </p>
+                </section>
+
+                <section class="reflection-section" id="development">
+                    <div class="section-top">
+                        <span class="section-number">03</span>
+                        <h2>
+                            Discovering my strengths
+                            <span class="subtitle">What I bring and what I want to improve</span>
+                        </h2>
+                    </div>
+
+                    <p>
+                        My experience as Deputy Head Girl at Saint Kizito
+                        Catholic School in 2025 helped me appreciate the
+                        importance of responsibility, communication and
+                        respectful leadership. Supporting the Head Girl
+                        and representing fellow students taught me that
+                        leadership involves listening to people and taking
+                        responsibilities seriously.
+                    </p>
+
+                    <p>
+                        I can also draw on my interests outside the
+                        classroom. Writing gives me an opportunity to
+                        organise my thoughts and express ideas clearly,
+                        while netball reminds me of the value of cooperation
+                        and contributing to a shared effort.
+                    </p>
+
+                    <p>
+                        As I continue my studies, I want to strengthen
+                        my technical abilities in Excel and SQL, become
+                        more confident in presenting information, and
+                        develop a better understanding of data visualisation.
+                        These are areas I can keep practising as I work
+                        towards my career goals.
+                    </p>
+
+                    <div class="learning-grid">
+                        <div class="learning-card">
+                            <div class="symbol">✳</div>
+                            <h3>Critical thinking</h3>
+                            <p>
+                                Learning to question information,
+                                consider alternatives and reach
+                                evidence-based conclusions.
+                            </p>
+                        </div>
+
+                        <div class="learning-card">
+                            <div class="symbol">↗</div>
+                            <h3>Communication</h3>
+                            <p>
+                                Expressing ideas clearly through
+                                writing, presentations and discussion.
+                            </p>
+                        </div>
+
+                        <div class="learning-card">
+                            <div class="symbol">✎</div>
+                            <h3>Technical development</h3>
+                            <p>
+                                Building my foundation in Excel,
+                                SQL and analytical thinking.
+                            </p>
+                        </div>
+
+                        <div class="learning-card">
+                            <div class="symbol">♡</div>
+                            <h3>Collaboration</h3>
+                            <p>
+                                Listening to others, sharing ideas
+                                and taking responsibility in a team.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="reflection-section" id="future">
+                    <div class="section-top">
+                        <span class="section-number">04</span>
+                        <h2>
+                            Becoming the professional I imagine
+                            <span class="subtitle">My ambitions and next steps</span>
+                        </h2>
+                    </div>
+
+                    <p>
+                        My long-term goal is to become a respected Data
+                        Analyst in the banking industry and eventually
+                        grow into a Senior Business Intelligence Analyst.
+                        I want to contribute to decisions that help banks
+                        understand their customers and improve the services
+                        they provide.
+                    </p>
+
+                    <p>
+                        I recognise that achieving this goal will require
+                        more than ambition. I need to strengthen my technical
+                        skills, complete my studies, learn from practical
+                        experience and remain open to feedback. Seeking
+                        an industrial attachment will be an important
+                        opportunity to understand how analytical work
+                        happens in a real business environment.
+                    </p>
+
+                    <p>
+                        I also hope that my future career will allow me
+                        to encourage younger girls who are interested
+                        in technology and analytics. I want them to see
+                        that they can be curious, creative, ambitious
+                        and capable of contributing meaningfully in
+                        fields that rely on data.
+                    </p>
+
+                    <p>
+                        For now, my responsibility is to make the most
+                        of the learning opportunities available to me.
+                        I want to leave this stage of my education with
+                        stronger skills, greater confidence and a clearer
+                        understanding of the kind of professional I want
+                        to become.
+                    </p>
+                </section>
+
+                <section class="closing-reflection">
+                    <div class="eyebrow">My takeaway</div>
+                    <h2>Growth is something I practise, not something I wait for.</h2>
+                    <p>
+                        This stage of my journey is teaching me to take
+                        my ambitions seriously while giving myself room
+                        to learn. I may still have a great deal to discover,
+                        but I can keep moving forward through curiosity,
+                        effort and a willingness to improve.
+                    </p>
+                </section>
+
+            </article>
+        </div>
+
+        <section class="next-page">
+            <div>
+                <div class="label">Next chapter · Teamwork</div>
+                <h2>What happens when different minds work together?</h2>
+            </div>
+
+            <a href="group-reflection.html">GROUP REFLECTION ↗</a>
+        </section>
+    </main>
+
+    <footer>
+        <span>© 2026 <strong>Larona Thabo</strong></span>
+        <span>Business Intelligence & Data Analytics · BAC</span>
+        <span>Personal journal · Cherry Glacé 🍒</span>
+    </footer>
+
+</body>
+</html>
