@@ -1,0 +1,1066 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Larona Thabo's Business Intelligence and Data Analytics skills project portfolio.">
+  <title>Skills Project | Larona Thabo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cherry: #B21E35;
+      --raspberry: #EF476F;
+      --blush: #F4A6B8;
+      --cream: #FFF0E5;
+      --burgundy: #351C2A;
+      --white: #FFFFFF;
+      --ink: #38262F;
+      --muted: #866F79;
+      --line: rgba(53, 28, 42, 0.12);
+      --surface: #FFF9F5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      background: var(--surface);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 249, 245, 0.95);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-wrap {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--cherry);
+      font: 800 1.2rem "Playfair Display", serif;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font: 700 0.63rem "DM Sans", sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 7px;
+    }
+
+    .nav-links a {
+      padding: 7px 10px;
+      border-radius: 25px;
+      font-size: 0.76rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--cherry);
+      color: white;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+      padding: 76px 7% 72px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      color: var(--cherry);
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font: 800 clamp(3rem, 7vw, 6rem)/1.04 "Playfair Display", serif;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    h1 em {
+      color: var(--cherry);
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 570px;
+      color: #68535E;
+      font-size: 1rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 19px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      background: var(--cherry);
+      color: white;
+    }
+
+    .button-secondary {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .dashboard-art {
+      position: relative;
+      max-width: 430px;
+      width: 100%;
+      margin: auto;
+      padding: 23px;
+      border: 1px solid rgba(53, 28, 42, 0.12);
+      border-radius: 24px;
+      background: white;
+      box-shadow: 0 25px 70px rgba(53, 28, 42, 0.12);
+      transform: rotate(2deg);
+    }
+
+    .dash-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding-bottom: 17px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .dash-top strong {
+      font-size: 0.86rem;
+    }
+
+    .dash-pill {
+      background: #FFF0E5;
+      color: var(--cherry);
+      border-radius: 20px;
+      padding: 5px 9px;
+      font-size: 0.64rem;
+      font-weight: 800;
+    }
+
+    .dash-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+      margin: 18px 0;
+    }
+
+    .dash-metric {
+      padding: 14px;
+      background: var(--surface);
+      border-radius: 13px;
+    }
+
+    .dash-metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.67rem;
+    }
+
+    .dash-metric strong {
+      display: block;
+      margin-top: 4px;
+      color: var(--burgundy);
+      font: 700 1.35rem "Playfair Display", serif;
+    }
+
+    .chart-title {
+      font-size: 0.76rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .bar-chart {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      gap: 12px;
+      height: 125px;
+      padding: 12px 7px 0;
+      border-bottom: 1px solid var(--line);
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 29px,
+        rgba(53, 28, 42, 0.06) 30px
+      );
+    }
+
+    .bar {
+      flex: 1;
+      max-width: 38px;
+      min-height: 10px;
+      border-radius: 7px 7px 0 0;
+      background: var(--blush);
+    }
+
+    .bar:nth-child(2),
+    .bar:nth-child(5) {
+      background: var(--raspberry);
+    }
+
+    .bar:nth-child(3),
+    .bar:nth-child(6) {
+      background: var(--cherry);
+    }
+
+    .chart-labels {
+      display: flex;
+      justify-content: space-around;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.62rem;
+      margin-top: 7px;
+    }
+
+    .hero-note {
+      color: var(--muted);
+      font-size: 0.69rem;
+      margin-top: 14px;
+      font-style: italic;
+    }
+
+    .section {
+      max-width: 1120px;
+      margin: auto;
+      padding: 70px 5%;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 25px;
+      margin-bottom: 32px;
+    }
+
+    .section-kicker {
+      color: var(--cherry);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 0.69rem;
+      font-weight: 800;
+      margin-bottom: 11px;
+    }
+
+    .section-heading h2,
+    .project-copy h2,
+    .insight-copy h2,
+    .next-step h2 {
+      font: 700 clamp(2rem, 4vw, 3.3rem)/1.15 "Playfair Display", serif;
+    }
+
+    .section-heading p {
+      max-width: 390px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .skill-card {
+      min-height: 200px;
+      padding: 22px;
+      border-radius: 19px;
+      background: white;
+      border: 1px solid var(--line);
+      transition: 0.25s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(53, 28, 42, 0.07);
+    }
+
+    .skill-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      background: var(--cream);
+      border-radius: 13px;
+      color: var(--cherry);
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+    }
+
+    .skill-card h3 {
+      font: 700 1.15rem "Playfair Display", serif;
+      margin-bottom: 9px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .project-section {
+      background: var(--burgundy);
+      color: var(--cream);
+      padding: 76px 5%;
+    }
+
+    .project-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .project-copy .section-kicker {
+      color: var(--blush);
+    }
+
+    .project-copy h2 {
+      margin-bottom: 20px;
+    }
+
+    .project-copy p {
+      color: #E8D4DC;
+      font-size: 0.91rem;
+      margin-bottom: 15px;
+    }
+
+    .project-tag {
+      display: inline-block;
+      margin: 5px 5px 0 0;
+      padding: 7px 11px;
+      border: 1px solid rgba(255, 240, 229, 0.25);
+      border-radius: 20px;
+      font-size: 0.7rem;
+    }
+
+    .project-board {
+      background: var(--cream);
+      color: var(--ink);
+      border-radius: 24px;
+      padding: 27px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .board-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .board-header h3 {
+      font: 700 1.35rem "Playfair Display", serif;
+    }
+
+    .board-header span {
+      background: white;
+      color: var(--cherry);
+      border-radius: 20px;
+      padding: 6px 10px;
+      font-size: 0.65rem;
+      font-weight: 800;
+    }
+
+    .board-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .board-stat {
+      background: white;
+      padding: 17px;
+      border-radius: 13px;
+    }
+
+    .board-stat span {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .board-stat strong {
+      display: block;
+      font: 700 1.6rem "Playfair Display", serif;
+      color: var(--cherry);
+      margin-top: 4px;
+    }
+
+    .placeholder-chart {
+      padding: 18px;
+      border-radius: 14px;
+      background: white;
+    }
+
+    .placeholder-chart h4 {
+      font-size: 0.82rem;
+      margin-bottom: 13px;
+    }
+
+    .horizontal-row {
+      display: grid;
+      grid-template-columns: 85px 1fr;
+      gap: 10px;
+      align-items: center;
+      margin: 13px 0;
+      font-size: 0.71rem;
+    }
+
+    .track {
+      height: 11px;
+      background: #F4E1E4;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      border-radius: 20px;
+      background: linear-gradient(90deg, var(--raspberry), var(--cherry));
+    }
+
+    .chart-warning {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 16px;
+      font-style: italic;
+    }
+
+    .insight-section {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .insight-copy p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 17px;
+    }
+
+    .insight-list {
+      display: grid;
+      gap: 13px;
+    }
+
+    .insight-item {
+      display: grid;
+      grid-template-columns: 45px 1fr;
+      gap: 15px;
+      padding: 19px;
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 16px;
+    }
+
+    .insight-number {
+      color: var(--raspberry);
+      font: 700 1.5rem "Playfair Display", serif;
+    }
+
+    .insight-item h3 {
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .insight-item p {
+      color: var(--muted);
+      font-size: 0.81rem;
+    }
+
+    .next-step-wrap {
+      padding: 0 5% 75px;
+    }
+
+    .next-step {
+      max-width: 1100px;
+      margin: auto;
+      padding: 43px;
+      border-radius: 24px;
+      background: var(--cream);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .next-step p {
+      color: var(--muted);
+      max-width: 560px;
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+
+    .next-pages {
+      max-width: 1100px;
+      margin: 0 auto 45px;
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      text-align: center;
+      background: var(--burgundy);
+      color: var(--cream);
+      padding: 28px 5%;
+      font-size: 0.78rem;
+    }
+
+    footer span {
+      color: var(--blush);
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .project-inner,
+      .insight-section {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        gap: 45px;
+      }
+
+      .dashboard-art {
+        max-width: 460px;
+      }
+
+      .skill-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-inner {
+        gap: 35px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 5px;
+      }
+
+      .nav-links a {
+        font-size: 0.69rem;
+        padding: 6px 8px;
+      }
+
+      .hero {
+        padding: 55px 6%;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .section {
+        padding: 52px 5%;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading p {
+        margin-top: 15px;
+      }
+
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skill-card {
+        min-height: auto;
+      }
+
+      .project-section {
+        padding: 55px 5%;
+      }
+
+      .project-board {
+        padding: 19px;
+      }
+
+      .board-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .horizontal-row {
+        grid-template-columns: 70px 1fr;
+      }
+
+      .next-step {
+        padding: 28px 23px;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .hero-buttons,
+      .next-pages,
+      .next-step-wrap,
+      footer {
+        display: none;
+      }
+
+      .hero,
+      .project-section {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .section,
+      .project-section {
+        padding: 30px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        Larona Thabo
+        <span>My learning journal</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="individual-reflection.html">Individual</a>
+        <a href="group-reflection.html">Group Work</a>
+        <a href="skills-project.html" class="active">Skills Project</a>
+        <a href="application-letter.html">Application</a>
+        <a href="email-template.html">Email</a>
+        <a href="study-resources.html">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div>
+        <p class="eyebrow">Page 05 · Skills in Practice</p>
+
+        <h1>Curiosity meets <em>data.</em></h1>
+
+        <p class="hero-description">
+          I am developing the skills to turn information into understanding.
+          Through Business Intelligence and Data Analytics, I want to learn
+          how to organise data, recognise patterns and communicate insights
+          that can support better business decisions.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#project" class="button button-primary">
+            Explore the project ↓
+          </a>
+
+          <a href="#skills" class="button button-secondary">
+            My developing skills
+          </a>
+        </div>
+      </div>
+
+      <div class="dashboard-art" aria-label="Decorative sample dashboard illustration">
+        <div class="dash-top">
+          <strong>Data, with purpose.</strong>
+          <span class="dash-pill">LEARNING LAB</span>
+        </div>
+
+        <div class="dash-metrics">
+          <div class="dash-metric">
+            <span>Question</span>
+            <strong>Why?</strong>
+          </div>
+
+          <div class="dash-metric">
+            <span>Approach</span>
+            <strong>Explore</strong>
+          </div>
+        </div>
+
+        <p class="chart-title">A visual way to compare information</p>
+
+        <div class="bar-chart" aria-hidden="true">
+          <div class="bar" style="height: 35%;"></div>
+          <div class="bar" style="height: 65%;"></div>
+          <div class="bar" style="height: 47%;"></div>
+          <div class="bar" style="height: 82%;"></div>
+          <div class="bar" style="height: 58%;"></div>
+          <div class="bar" style="height: 95%;"></div>
+        </div>
+
+        <div class="chart-labels">
+          <span>A</span><span>B</span><span>C</span>
+          <span>D</span><span>E</span><span>F</span>
+        </div>
+
+        <p class="hero-note">
+          Illustrative graphic only — these bars are not real analytical results.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <main>
+
+    <section class="section" id="skills">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">My toolkit</p>
+          <h2>Skills I'm building.</h2>
+        </div>
+
+        <p>
+          My goal is to build a practical foundation that connects technical
+          ability with clear communication and careful problem-solving.
+        </p>
+      </div>
+
+      <div class="skill-grid">
+
+        <article class="skill-card">
+          <div class="skill-icon">▦</div>
+          <h3>Microsoft Excel</h3>
+          <p>
+            Developing confidence in organising information, working with
+            spreadsheets and using formulas to support analysis.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-icon">⌘</div>
+          <h3>Basic SQL</h3>
+          <p>
+            Building a foundation in querying structured data and learning
+            how to retrieve information relevant to a question.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-icon">▥</div>
+          <h3>Data Visualisation</h3>
+          <p>
+            Learning how charts and visual summaries can make information
+            easier to interpret and communicate.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-icon">✎</div>
+          <h3>Reporting</h3>
+          <p>
+            Practising how to explain ideas in a structured, readable way
+            and present findings clearly to an audience.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="project-section" id="project">
+      <div class="project-inner">
+
+        <div class="project-copy">
+          <p class="section-kicker">Proposed learning project</p>
+
+          <h2>Understanding customer service in banking.</h2>
+
+          <p>
+            One area I would like to explore is how a bank could use customer
+            feedback to understand service quality. Customer feedback may
+            contain useful information about waiting times, communication,
+            digital banking and the overall customer experience.
+          </p>
+
+          <p>
+            For a learning project, I could work with a suitable sample
+            dataset, organise the records in Excel, compare recurring themes
+            and create charts that summarise the findings. I would then
+            explain what the results might mean and what further questions
+            a bank could investigate.
+          </p>
+
+          <p>
+            This project connects with my ambition to become a Data Analyst
+            in the banking industry. It would also help me practise analysing
+            information from a business perspective rather than looking at
+            numbers without considering the problem they are meant to solve.
+          </p>
+
+          <div>
+            <span class="project-tag">Excel</span>
+            <span class="project-tag">Data cleaning</span>
+            <span class="project-tag">Charts</span>
+            <span class="project-tag">Business insights</span>
+          </div>
+        </div>
+
+        <div class="project-board">
+          <div class="board-header">
+            <h3>Customer Experience</h3>
+            <span>CONCEPT DASHBOARD</span>
+          </div>
+
+          <div class="board-stat-grid">
+            <div class="board-stat">
+              <span>Area to investigate</span>
+              <strong>Service</strong>
+            </div>
+
+            <div class="board-stat">
+              <span>Possible data source</span>
+              <strong>Feedback</strong>
+            </div>
+
+            <div class="board-stat">
+              <span>Analysis approach</span>
+              <strong>Compare</strong>
+            </div>
+
+            <div class="board-stat">
+              <span>Intended outcome</span>
+              <strong>Insights</strong>
+            </div>
+          </div>
+
+          <div class="placeholder-chart">
+            <h4>Possible areas for comparison</h4>
+
+            <div class="horizontal-row">
+              <span>Waiting time</span>
+              <div class="track">
+                <div class="fill" style="width: 72%;"></div>
+              </div>
+            </div>
+
+            <div class="horizontal-row">
+              <span>Communication</span>
+              <div class="track">
+                <div class="fill" style="width: 55%;"></div>
+              </div>
+            </div>
+
+            <div class="horizontal-row">
+              <span>Digital access</span>
+              <div class="track">
+                <div class="fill" style="width: 83%;"></div>
+              </div>
+            </div>
+
+            <p class="chart-warning">
+              Concept illustration only. Bar lengths are decorative and do
+              not represent collected data, customer ratings or survey results.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="insight-section">
+
+        <div class="insight-copy">
+          <p class="section-kicker">My analytical mindset</p>
+
+          <h2>Numbers need a story.</h2>
+
+          <p>
+            I want to develop the habit of asking meaningful questions
+            before drawing conclusions. Data becomes useful when it is
+            examined carefully, interpreted in context and communicated
+            in a way that helps someone understand a problem.
+          </p>
+
+          <p>
+            I also need to remember that a pattern is not automatically
+            an explanation. Good analysis involves checking the quality
+            of information, considering limitations and being honest about
+            what the evidence does and does not show.
+          </p>
+        </div>
+
+        <div class="insight-list">
+
+          <article class="insight-item">
+            <div class="insight-number">01</div>
+            <div>
+              <h3>Start with a question</h3>
+              <p>
+                Identify the business problem before deciding which
+                information to collect or examine.
+              </p>
+            </div>
+          </article>
+
+          <article class="insight-item">
+            <div class="insight-number">02</div>
+            <div>
+              <h3>Prepare the information</h3>
+              <p>
+                Check for missing, inconsistent or duplicated records
+                before using data to draw conclusions.
+              </p>
+            </div>
+          </article>
+
+          <article class="insight-item">
+            <div class="insight-number">03</div>
+            <div>
+              <h3>Look for meaningful patterns</h3>
+              <p>
+                Compare categories, examine trends and use suitable
+                visualisations to make findings easier to understand.
+              </p>
+            </div>
+          </article>
+
+          <article class="insight-item">
+            <div class="insight-number">04</div>
+            <div>
+              <h3>Explain the evidence</h3>
+              <p>
+                Present findings clearly, acknowledge limitations and
+                distinguish evidence from assumptions.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="next-step-wrap">
+      <div class="next-step">
+        <div>
+          <p class="section-kicker">The next chapter</p>
+          <h2>From classroom to career.</h2>
+          <p>
+            My next step is to keep practising these skills through
+            coursework, small datasets and practical exercises, gradually
+            building the confidence to apply what I learn in a professional
+            setting.
+          </p>
+        </div>
+
+        <a href="application-letter.html" class="button button-primary">
+          Explore my application →
+        </a>
+      </div>
+    </section>
+
+    <div class="next-pages">
+      <a href="group-reflection.html" class="button button-secondary">
+        ← Group Reflection
+      </a>
+
+      <a href="application-letter.html" class="button button-primary">
+        Next: Application Letter →
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Larona Thabo · <span>Curious by nature. Analytical by ambition.</span></p>
+    <p>Business Intelligence &amp; Data Analytics · Botswana Accountancy College</p>
+  </footer>
+
+</body>
+</html>
