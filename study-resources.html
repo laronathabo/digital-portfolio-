@@ -1,0 +1,856 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Larona Thabo's learning library for Business Intelligence and Data Analytics.">
+  <title>Study Resources | Larona Thabo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cherry: #B21E35;
+      --raspberry: #EF476F;
+      --blush: #F4A6B8;
+      --cream: #FFF0E5;
+      --burgundy: #351C2A;
+      --white: #FFFFFF;
+      --muted: #806D73;
+      --line: #E9D7D9;
+      --pale: #FBE0E5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--burgundy);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-strip {
+      height: 6px;
+      background: linear-gradient(
+        90deg,
+        var(--burgundy),
+        var(--cherry),
+        var(--raspberry),
+        var(--blush)
+      );
+    }
+
+    header {
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+
+    .brand span {
+      color: var(--cherry);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    nav a {
+      font-size: 0.75rem;
+      padding: 7px 10px;
+      border-radius: 30px;
+      transition: 0.25s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: var(--cherry);
+      color: var(--white);
+    }
+
+    .page {
+      max-width: 1150px;
+      margin: auto;
+      padding: 65px 7% 85px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--cherry);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 7vw, 5rem);
+      letter-spacing: -2px;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    h1 em {
+      color: var(--cherry);
+      font-weight: 500;
+    }
+
+    .intro {
+      max-width: 700px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .hero-panel {
+      background: var(--burgundy);
+      color: var(--white);
+      border-radius: 25px;
+      padding: 35px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      align-items: center;
+      gap: 30px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 65px;
+    }
+
+    .hero-panel h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 15px;
+    }
+
+    .hero-panel p {
+      color: #F4DCE2;
+      font-size: 0.94rem;
+      max-width: 520px;
+    }
+
+    .hero-label {
+      color: var(--blush);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .visual {
+      min-height: 205px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .visual-bar {
+      width: 38px;
+      border-radius: 20px 20px 7px 7px;
+      background: linear-gradient(180deg, var(--raspberry), var(--blush));
+      box-shadow: 0 10px 25px rgba(239, 71, 111, 0.15);
+    }
+
+    .visual-bar:nth-child(1) { height: 75px; }
+    .visual-bar:nth-child(2) { height: 125px; }
+    .visual-bar:nth-child(3) { height: 95px; }
+    .visual-bar:nth-child(4) { height: 165px; }
+    .visual-bar:nth-child(5) { height: 115px; }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 420px;
+      font-size: 0.87rem;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-bottom: 65px;
+    }
+
+    .resource-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(53, 28, 42, 0.07);
+    }
+
+    .resource-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      margin-bottom: 18px;
+    }
+
+    .resource-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--pale);
+      color: var(--cherry);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .resource-tag {
+      font-size: 0.68rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--cherry);
+      background: #FFF0F3;
+      padding: 6px 10px;
+      border-radius: 30px;
+    }
+
+    .resource-card h3 {
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+    }
+
+    .resource-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: var(--cherry);
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--blush);
+      padding-bottom: 3px;
+    }
+
+    .resource-link:hover {
+      color: var(--raspberry);
+    }
+
+    .roadmap {
+      background: #FBE0E5;
+      border: 1px solid #F3C2CE;
+      border-radius: 25px;
+      padding: 35px;
+      margin-bottom: 65px;
+    }
+
+    .roadmap h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 10px;
+    }
+
+    .roadmap-intro {
+      color: #80616C;
+      margin-bottom: 28px;
+      max-width: 650px;
+      font-size: 0.9rem;
+    }
+
+    .roadmap-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .roadmap-step {
+      background: rgba(255, 255, 255, 0.75);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(178, 30, 53, 0.12);
+    }
+
+    .step-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--cherry);
+      margin-bottom: 8px;
+    }
+
+    .roadmap-step h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .roadmap-step p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .study-section {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 30px;
+      align-items: start;
+      margin-bottom: 60px;
+    }
+
+    .study-section h2 {
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      margin-bottom: 15px;
+    }
+
+    .study-section > div:first-child p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .study-list {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 25px;
+    }
+
+    .study-item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid #F1E7E8;
+    }
+
+    .study-item:first-child {
+      padding-top: 0;
+    }
+
+    .study-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .check {
+      flex-shrink: 0;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--cherry);
+      background: var(--pale);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .study-item h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.91rem;
+      margin-bottom: 4px;
+    }
+
+    .study-item p {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .reflection {
+      padding: 35px;
+      background: var(--white);
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      margin-bottom: 30px;
+    }
+
+    .reflection .quote-mark {
+      color: var(--raspberry);
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    .reflection h2 {
+      font-size: 2rem;
+      margin: 5px 0 15px;
+    }
+
+    .reflection p {
+      color: var(--muted);
+      max-width: 800px;
+      font-size: 0.92rem;
+    }
+
+    .closing {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: var(--cherry);
+      color: var(--white);
+      padding: 28px;
+      border-radius: 20px;
+    }
+
+    .closing h2 {
+      font-size: 1.7rem;
+      margin-bottom: 6px;
+    }
+
+    .closing p {
+      color: #FFE4E9;
+      font-size: 0.86rem;
+    }
+
+    .closing a {
+      background: var(--white);
+      color: var(--cherry);
+      border-radius: 30px;
+      padding: 12px 18px;
+      font-size: 0.83rem;
+      font-weight: 700;
+    }
+
+    footer {
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 26px 7%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.78rem;
+    }
+
+    footer span {
+      color: var(--blush);
+    }
+
+    @media (max-width: 850px) {
+      .roadmap-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .visual {
+        min-height: 160px;
+      }
+
+      .study-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav a {
+        font-size: 0.7rem;
+      }
+
+      .page {
+        padding-top: 42px;
+      }
+
+      .resource-grid,
+      .roadmap-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel,
+      .roadmap,
+      .reflection {
+        padding: 24px;
+      }
+
+      .resource-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-strip"></div>
+
+  <header>
+    <a class="brand" href="index.html">Larona <span>Thabo</span></a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="cv.html">CV</a>
+      <a href="individual-reflection.html">Reflection</a>
+      <a href="group-reflection.html">Group Work</a>
+      <a href="skills-project.html">Skills Project</a>
+      <a href="application-letter.html">Application Letter</a>
+      <a href="email-template.html">Email</a>
+      <a class="active" href="study-resources.html">Resources</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <span class="eyebrow">Page 08 · My Learning Library</span>
+
+    <h1>Curiosity today. <em>Capability tomorrow.</em></h1>
+
+    <p class="intro">
+      Business Intelligence and Data Analytics is a field where learning
+      never really stops. This page brings together resources I can explore
+      as I build my technical skills, improve my understanding of data and
+      work towards a future career in banking analytics.
+    </p>
+
+    <section class="hero-panel">
+      <div>
+        <span class="hero-label">The learning mindset</span>
+        <h2>I don't need to know everything. I need to keep learning.</h2>
+        <p>
+          When a concept feels difficult, I can break it into smaller steps,
+          practise it, ask questions and return to it until it makes sense.
+          My goal is to turn what I learn in class into skills I can use
+          to understand real business questions.
+        </p>
+      </div>
+
+      <div class="visual" role="img" aria-label="Decorative bar chart representing growth through learning">
+        <div class="visual-bar"></div>
+        <div class="visual-bar"></div>
+        <div class="visual-bar"></div>
+        <div class="visual-bar"></div>
+        <div class="visual-bar"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Explore and practise</span>
+          <h2>My resource shelf</h2>
+        </div>
+        <p>
+          A starting point for developing practical skills in spreadsheets,
+          databases, dashboards and analytical thinking.
+        </p>
+      </div>
+
+      <div class="resource-grid">
+        <article class="resource-card">
+          <div class="resource-top">
+            <div class="resource-icon">Ex</div>
+            <span class="resource-tag">Spreadsheets</span>
+          </div>
+          <h3>Microsoft Excel</h3>
+          <p>
+            Build confidence with formulas, sorting, filtering, tables,
+            charts and PivotTables. These skills can help organise information
+            and summarise business data.
+          </p>
+          <a class="resource-link"
+             href="https://support.microsoft.com/excel"
+             target="_blank" rel="noopener noreferrer">
+            Explore Excel help ↗
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-top">
+            <div class="resource-icon">SQL</div>
+            <span class="resource-tag">Databases</span>
+          </div>
+          <h3>SQLBolt</h3>
+          <p>
+            Practise SQL through interactive lessons. Start with SELECT
+            statements, filtering and sorting, then progress to joins and
+            aggregate functions.
+          </p>
+          <a class="resource-link"
+             href="https://sqlbolt.com/"
+             target="_blank" rel="noopener noreferrer">
+            Start SQL lessons ↗
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-top">
+            <div class="resource-icon">BI</div>
+            <span class="resource-tag">Visualisation</span>
+          </div>
+          <h3>Microsoft Power BI</h3>
+          <p>
+            Explore how datasets can become interactive reports and dashboards.
+            Learn about importing data, creating visuals, and communicating
+            findings clearly.
+          </p>
+          <a class="resource-link"
+             href="https://learn.microsoft.com/power-bi/"
+             target="_blank" rel="noopener noreferrer">
+            Visit Power BI learning ↗
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-top">
+            <div class="resource-icon">W3</div>
+            <span class="resource-tag">SQL reference</span>
+          </div>
+          <h3>W3Schools SQL</h3>
+          <p>
+            Use this beginner-friendly reference to review SQL syntax,
+            understand examples and test simple queries as your database
+            knowledge develops.
+          </p>
+          <a class="resource-link"
+             href="https://www.w3schools.com/sql/"
+             target="_blank" rel="noopener noreferrer">
+            Review SQL examples ↗
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-top">
+            <div class="resource-icon">K</div>
+            <span class="resource-tag">Data practice</span>
+          </div>
+          <h3>Kaggle Learn</h3>
+          <p>
+            Explore short lessons and practical exercises in data-related
+            topics. Use beginner activities to strengthen your understanding
+            by working through examples.
+          </p>
+          <a class="resource-link"
+             href="https://www.kaggle.com/learn"
+             target="_blank" rel="noopener noreferrer">
+            Explore learning modules ↗
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-top">
+            <div class="resource-icon">BAC</div>
+            <span class="resource-tag">Academic support</span>
+          </div>
+          <h3>Botswana Accountancy College</h3>
+          <p>
+            Keep up with college information and use available course
+            materials, lecturer guidance and approved academic support
+            resources to strengthen classroom learning.
+          </p>
+          <a class="resource-link"
+             href="https://www.bac.ac.bw/"
+             target="_blank" rel="noopener noreferrer">
+            Visit BAC website ↗
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="roadmap">
+      <span class="eyebrow">One step at a time</span>
+      <h2>My learning roadmap</h2>
+      <p class="roadmap-intro">
+        This is a personal plan for guiding my development. I can adjust
+        the order and pace to fit my coursework, available time and current
+        level of understanding.
+      </p>
+
+      <div class="roadmap-list">
+        <article class="roadmap-step">
+          <div class="step-number">01</div>
+          <h3>Build foundations</h3>
+          <p>
+            Strengthen spreadsheet skills, formulas, data organisation
+            and the fundamentals taught in class.
+          </p>
+        </article>
+
+        <article class="roadmap-step">
+          <div class="step-number">02</div>
+          <h3>Understand SQL</h3>
+          <p>
+            Practise retrieving, filtering, combining and summarising
+            information from sample databases.
+          </p>
+        </article>
+
+        <article class="roadmap-step">
+          <div class="step-number">03</div>
+          <h3>Tell stories with data</h3>
+          <p>
+            Learn to select useful charts, design clear dashboards
+            and explain what the information means.
+          </p>
+        </article>
+
+        <article class="roadmap-step">
+          <div class="step-number">04</div>
+          <h3>Apply my skills</h3>
+          <p>
+            Develop small practice projects, document my learning
+            and prepare for future industrial attachment opportunities.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="study-section">
+      <div>
+        <span class="eyebrow">My study habits</span>
+        <h2>How I want to learn</h2>
+        <p>
+          I learn best when I combine understanding with practice.
+          Rather than simply reading notes, I want to give myself
+          opportunities to apply each new concept and reflect on what
+          I still need to improve.
+        </p>
+      </div>
+
+      <div class="study-list">
+        <article class="study-item">
+          <span class="check">1</span>
+          <div>
+            <h3>Set one clear objective</h3>
+            <p>
+              Decide what I want to understand or be able to do before
+              beginning a study session.
+            </p>
+          </div>
+        </article>
+
+        <article class="study-item">
+          <span class="check">2</span>
+          <div>
+            <h3>Practise with examples</h3>
+            <p>
+              Use small datasets and exercises to apply concepts rather
+              than relying on memorisation alone.
+            </p>
+          </div>
+        </article>
+
+        <article class="study-item">
+          <span class="check">3</span>
+          <div>
+            <h3>Explain what I learned</h3>
+            <p>
+              Write a short summary in my own words and explain why
+              a formula, query or visualisation works.
+            </p>
+          </div>
+        </article>
+
+        <article class="study-item">
+          <span class="check">4</span>
+          <div>
+            <h3>Review mistakes</h3>
+            <p>
+              Treat errors as useful feedback. Identify what went wrong,
+              correct it and try the task again.
+            </p>
+          </div>
+        </article>
+
+        <article class="study-item">
+          <span class="check">5</span>
+          <div>
+            <h3>Keep a record of progress</h3>
+            <p>
+              Save useful notes, exercises and practice projects so I can
+              see how my skills develop over time.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="reflection">
+      <div class="quote-mark">“</div>
+      <span class="eyebrow">A personal reminder</span>
+      <h2>Progress is built through persistence.</h2>
+      <p>
+        As I continue studying Business Intelligence and Data Analytics,
+        I want to remain curious, patient and willing to challenge myself.
+        My ambition is to understand how data can help businesses,
+        particularly banks, make informed decisions and improve customer
+        experiences. Every concept I practise and every question I ask
+        can contribute to that goal. I am still learning, and that is
+        an important part of my journey.
+      </p>
+    </section>
+
+    <section class="closing">
+      <div>
+        <h2>Eight pages. One learning journey.</h2>
+        <p>
+          My portfolio brings together my background, reflections,
+          developing skills and professional aspirations.
+        </p>
+      </div>
+
+      <a href="index.html">Return to the beginning ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Larona Thabo <span>·</span> Learning with purpose.</p>
+    <p>Business Intelligence &amp; Data Analytics · BAC</p>
+  </footer>
+</body>
+</html>
