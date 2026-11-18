@@ -1,0 +1,1011 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff0e5">
+    <meta name="description" content="Meet Larona Thabo, a Business Intelligence and Data Analytics student building her future in banking analytics.">
+    <title>Larona Thabo — A Mind for Data</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cherry: #b21e35;
+            --raspberry: #ef476f;
+            --blush: #f4a6b8;
+            --vanilla: #fff0e5;
+            --burgundy: #351c2a;
+            --white: #fffaf6;
+            --muted: #8a6b73;
+            --line: rgba(53, 28, 42, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--vanilla);
+            color: var(--burgundy);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .announcement {
+            padding: 9px 20px;
+            background: var(--burgundy);
+            color: var(--vanilla);
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .announcement span {
+            color: var(--blush);
+        }
+
+        header {
+            width: min(1200px, 90%);
+            margin: auto;
+            padding: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .wordmark {
+            font-family: "Playfair Display", serif;
+            font-size: 23px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            white-space: nowrap;
+        }
+
+        .wordmark span {
+            color: var(--cherry);
+            font-style: italic;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 18px;
+        }
+
+        nav a {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--muted);
+            transition: color 0.2s;
+        }
+
+        nav a:hover,
+        nav a[aria-current="page"] {
+            color: var(--cherry);
+        }
+
+        .hero {
+            width: min(1200px, 90%);
+            min-height: 650px;
+            margin: auto;
+            padding: 76px 0 85px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 23px;
+            color: var(--cherry);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 30px;
+            height: 1px;
+            background: var(--cherry);
+        }
+
+        h1 {
+            max-width: 700px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(54px, 7.8vw, 104px);
+            font-weight: 500;
+            line-height: 0.99;
+            letter-spacing: -5px;
+        }
+
+        h1 em {
+            color: var(--cherry);
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 480px;
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 32px;
+        }
+
+        .button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            min-height: 49px;
+            padding: 13px 23px;
+            border: 1px solid var(--cherry);
+            border-radius: 3px;
+            background: var(--cherry);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .button:hover {
+            background: var(--burgundy);
+            border-color: var(--burgundy);
+            transform: translateY(-3px);
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: var(--burgundy);
+            border-color: var(--line);
+        }
+
+        .button.secondary:hover {
+            background: var(--white);
+            border-color: var(--burgundy);
+        }
+
+        .hero-note {
+            margin-top: 38px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .note-star {
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--blush);
+            border-radius: 50%;
+            color: var(--cherry);
+            font-size: 18px;
+        }
+
+        /* Original illustrated composition:
+           no portrait or external image is required. */
+
+        .artwork {
+            position: relative;
+            min-height: 455px;
+            display: grid;
+            place-items: center;
+            isolation: isolate;
+        }
+
+        .artwork::before {
+            content: "";
+            position: absolute;
+            z-index: -2;
+            inset: 25px 10px 20px 20px;
+            background: var(--blush);
+            border-radius: 48% 48% 4px 4px;
+            transform: rotate(4deg);
+        }
+
+        .artwork::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 10px 30px 35px 5px;
+            border: 1px solid var(--cherry);
+            border-radius: 48% 48% 4px 4px;
+            transform: rotate(-4deg);
+        }
+
+        .art-inner {
+            position: relative;
+            width: 80%;
+            padding: 43px 22px;
+            text-align: center;
+        }
+
+        .art-kicker {
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cherry);
+        }
+
+        .cherry-symbol {
+            margin: 20px 0;
+            color: var(--cherry);
+            font-size: clamp(85px, 12vw, 135px);
+            line-height: 1.1;
+            filter: drop-shadow(5px 7px 0 rgba(178, 30, 53, 0.08));
+        }
+
+        .art-quote {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(22px, 3vw, 34px);
+            font-style: italic;
+            line-height: 1.25;
+        }
+
+        .art-bottom {
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .floating-label {
+            position: absolute;
+            padding: 12px 16px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            box-shadow: 0 8px 24px rgba(53, 28, 42, 0.07);
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .floating-label.top {
+            top: 36px;
+            right: -4px;
+            transform: rotate(5deg);
+        }
+
+        .floating-label.bottom {
+            bottom: 33px;
+            left: -8px;
+            transform: rotate(-5deg);
+        }
+
+        .floating-label span {
+            color: var(--cherry);
+        }
+
+        .ticker {
+            overflow: hidden;
+            background: var(--cherry);
+            color: white;
+            padding: 16px 0;
+        }
+
+        .ticker-track {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 14px 25px;
+            width: 100%;
+            padding: 0 20px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .ticker-track span::after {
+            content: " ✳";
+            color: var(--blush);
+            margin-left: 18px;
+        }
+
+        .section {
+            width: min(1100px, 88%);
+            margin: auto;
+            padding: 105px 0;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            margin-top: 12px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 5vw, 64px);
+            font-weight: 500;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .section-heading h2 em {
+            color: var(--cherry);
+        }
+
+        .section-heading p {
+            max-width: 550px;
+            margin-top: 17px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 55px;
+            align-items: start;
+        }
+
+        .about-card {
+            padding: 33px;
+            background: var(--burgundy);
+            color: var(--vanilla);
+            border-radius: 4px;
+        }
+
+        .about-card .number {
+            color: var(--blush);
+            font-family: "Playfair Display", serif;
+            font-size: 55px;
+            line-height: 1.2;
+        }
+
+        .about-card h3 {
+            margin: 13px 0;
+            font-family: "Playfair Display", serif;
+            font-size: 29px;
+            font-weight: 500;
+        }
+
+        .about-card p {
+            color: #e8d7dc;
+            font-size: 13px;
+        }
+
+        .about-copy p {
+            margin-bottom: 18px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .about-copy strong {
+            color: var(--burgundy);
+        }
+
+        .interest-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 25px;
+        }
+
+        .interest-list span {
+            padding: 9px 13px;
+            border: 1px solid var(--line);
+            border-radius: 30px;
+            font-size: 11px;
+            background: var(--white);
+        }
+
+        .interest-list span::before {
+            content: "✳ ";
+            color: var(--cherry);
+        }
+
+        .direction {
+            background: var(--white);
+        }
+
+        .direction-inner {
+            width: min(1100px, 88%);
+            margin: auto;
+            padding: 95px 0;
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .direction-graphic {
+            min-height: 330px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: var(--blush);
+            border-radius: 48% 48% 4px 4px;
+        }
+
+        .direction-graphic .small-label {
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .direction-graphic .big-word {
+            color: var(--cherry);
+            font-family: "Playfair Display", serif;
+            font-size: clamp(45px, 7vw, 75px);
+            line-height: 1;
+        }
+
+        .direction-graphic .bottom-label {
+            align-self: flex-end;
+            font-size: 11px;
+        }
+
+        .direction-copy h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 5vw, 57px);
+            font-weight: 500;
+            line-height: 1.12;
+            letter-spacing: -1px;
+        }
+
+        .direction-copy h2 em {
+            color: var(--cherry);
+        }
+
+        .direction-copy p {
+            margin-top: 20px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .direction-copy .button {
+            margin-top: 26px;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .quick-card {
+            min-height: 175px;
+            padding: 23px 19px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: var(--white);
+            border: 1px solid var(--line);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .quick-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cherry);
+        }
+
+        .quick-card .card-number {
+            color: var(--cherry);
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .quick-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 21px;
+            font-weight: 500;
+            line-height: 1.25;
+        }
+
+        .quick-card .arrow {
+            align-self: flex-end;
+            color: var(--cherry);
+            font-size: 22px;
+        }
+
+        .closing {
+            padding: 80px 20px;
+            background: var(--burgundy);
+            color: var(--vanilla);
+            text-align: center;
+        }
+
+        .closing .eyebrow {
+            color: var(--blush);
+            justify-content: center;
+        }
+
+        .closing .eyebrow::before {
+            background: var(--blush);
+        }
+
+        .closing h2 {
+            max-width: 780px;
+            margin: auto;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 6vw, 70px);
+            font-weight: 500;
+            line-height: 1.12;
+            letter-spacing: -2px;
+        }
+
+        .closing h2 em {
+            color: var(--blush);
+        }
+
+        .closing p {
+            max-width: 500px;
+            margin: 22px auto 0;
+            color: #e8d7dc;
+            font-size: 13px;
+        }
+
+        .closing .button {
+            margin-top: 28px;
+            background: var(--vanilla);
+            color: var(--burgundy);
+            border-color: var(--vanilla);
+        }
+
+        footer {
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            background: var(--burgundy);
+            border-top: 1px solid rgba(255,255,255,0.15);
+            color: #d9c1ca;
+            font-size: 10px;
+        }
+
+        footer strong {
+            color: var(--vanilla);
+            font-weight: 600;
+        }
+
+        @media (max-width: 850px) {
+            header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: flex-start;
+                gap: 12px 17px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding-top: 65px;
+            }
+
+            .hero-copy {
+                max-width: 680px;
+            }
+
+            .artwork {
+                width: min(460px, 100%);
+                margin: auto;
+                min-height: 390px;
+            }
+
+            .about-grid,
+            .direction-inner {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-card {
+                max-width: 500px;
+            }
+
+            .direction-graphic {
+                min-height: 270px;
+            }
+
+            .quick-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .announcement {
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            header {
+                padding: 19px 0;
+            }
+
+            .wordmark {
+                font-size: 22px;
+            }
+
+            nav {
+                gap: 10px 14px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .hero {
+                padding-top: 50px;
+                padding-bottom: 55px;
+                gap: 20px;
+            }
+
+            h1 {
+                font-size: 55px;
+                letter-spacing: -3px;
+            }
+
+            .hero-description {
+                font-size: 13px;
+            }
+
+            .hero-actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .artwork {
+                min-height: 335px;
+            }
+
+            .art-inner {
+                width: 85%;
+                padding: 25px 15px;
+            }
+
+            .cherry-symbol {
+                font-size: 90px;
+            }
+
+            .floating-label {
+                font-size: 9px;
+                padding: 9px 11px;
+            }
+
+            .section,
+            .direction-inner {
+                padding-top: 70px;
+                padding-bottom: 70px;
+            }
+
+            .about-card {
+                padding: 25px;
+            }
+
+            .quick-links {
+                gap: 10px;
+            }
+
+            .quick-card {
+                min-height: 150px;
+                padding: 16px 13px;
+            }
+
+            .quick-card h3 {
+                font-size: 18px;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="announcement">
+        A curious mind. A bold spirit. <span>A future built on data.</span>
+    </div>
+
+    <header>
+        <a class="wordmark" href="index.html">
+            Larona Thabo<span>.</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="cv.html">My CV</a>
+            <a href="individual-reflection.html">Reflection</a>
+            <a href="group-reflection.html">Group Work</a>
+            <a href="skills-project.html">Skills Project</a>
+            <a href="application-letter.html">Application</a>
+            <a href="email-template.html">Email</a>
+            <a href="study-resources.html">Resources</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <div class="eyebrow">Business Intelligence & Data Analytics</div>
+
+                <h1>
+                    A little<br>
+                    creative.<br>
+                    A lot <em>ambitious.</em>
+                </h1>
+
+                <p class="hero-description">
+                    I'm Larona Thabo, a first-year Business Intelligence and
+                    Data Analytics student at Botswana Accountancy College.
+                    I love a challenge, ask questions, and believe that the
+                    right data can help businesses make better decisions.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#about" class="button">
+                        GET TO KNOW ME <span aria-hidden="true">↗</span>
+                    </a>
+                    <a href="cv.html" class="button secondary">
+                        EXPLORE MY CV
+                    </a>
+                </div>
+
+                <div class="hero-note">
+                    <span class="note-star" aria-hidden="true">✳</span>
+                    <span>Currently learning, growing and building my future.</span>
+                </div>
+            </div>
+
+            <div class="artwork" role="img"
+                 aria-label="Decorative cherry illustration representing creativity and personal growth">
+                <div class="art-inner">
+                    <div class="art-kicker">A note from my world</div>
+                    <div class="cherry-symbol" aria-hidden="true">🍒</div>
+                    <div class="art-quote">
+                        Curious by nature.<br>
+                        Driven by possibility.
+                    </div>
+                    <div class="art-bottom">LEARNING WITH PURPOSE · GROWING WITH INTENTION</div>
+                </div>
+
+                <div class="floating-label top">
+                    <span>01 /</span> Future Data Analyst
+                </div>
+
+                <div class="floating-label bottom">
+                    ✳ Always asking why
+                </div>
+            </div>
+        </section>
+
+        <div class="ticker" aria-label="Areas of interest">
+            <div class="ticker-track">
+                <span>Data Analysis</span>
+                <span>Business Intelligence</span>
+                <span>Creative Thinking</span>
+                <span>Banking Analytics</span>
+            </div>
+        </div>
+
+        <section class="section" id="about">
+            <div class="section-heading">
+                <div class="eyebrow">A little more about me</div>
+                <h2>More than numbers.<br><em>There's a person behind them.</em></h2>
+                <p>
+                    My story is about curiosity, determination and finding
+                    meaningful ways to turn what I learn into something useful.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="number">01.</div>
+                    <h3>The way I think</h3>
+                    <p>
+                        I enjoy challenging things because they make me think
+                        critically, test my understanding and discover what I
+                        am capable of. When something is difficult, I keep
+                        working until I understand it.
+                    </p>
+                </div>
+
+                <div class="about-copy">
+                    <p>
+                        I'm currently studying <strong>Business Intelligence
+                        and Data Analytics at Botswana Accountancy College</strong>.
+                        My interest lies in understanding how information
+                        can help organisations see patterns, solve problems
+                        and make informed decisions.
+                    </p>
+
+                    <p>
+                        I'm especially interested in the banking industry.
+                        Banks work with information about customers, services
+                        and business performance every day. I want to learn
+                        how analysts turn that information into useful insights
+                        that help banks serve people better.
+                    </p>
+
+                    <p>
+                        Outside my studies, I enjoy <strong>playing netball,
+                        listening to music and writing</strong>. Writing is
+                        my quiet place. It gives me room to organise my thoughts,
+                        express myself and make sense of the world around me.
+                    </p>
+
+                    <div class="interest-list" aria-label="My interests">
+                        <span>Netball</span>
+                        <span>Music</span>
+                        <span>Writing</span>
+                        <span>Data Visualisation</span>
+                        <span>Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="direction">
+            <div class="direction-inner">
+                <div class="direction-graphic">
+                    <div class="small-label">The bigger picture</div>
+                    <div class="big-word">Dream.<br>Learn.<br>Become.</div>
+                    <div class="bottom-label">One step at a time ↗</div>
+                </div>
+
+                <div class="direction-copy">
+                    <div class="eyebrow">Where I'm headed</div>
+                    <h2>Turning curiosity into a <em>career.</em></h2>
+
+                    <p>
+                        My goal is to become a trusted and respected Data
+                        Analyst in the banking industry. I want to contribute
+                        to evidence-based decisions that improve services
+                        and create better experiences for customers.
+                    </p>
+
+                    <p>
+                        In the long term, I hope to grow into a Senior Business
+                        Intelligence Analyst. Just as importantly, I want to
+                        become a woman whose journey encourages younger girls
+                        to believe that they, too, can build successful careers
+                        in data and technology.
+                    </p>
+
+                    <a href="skills-project.html" class="button">
+                        EXPLORE MY LEARNING <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <div class="eyebrow">Inside my portfolio</div>
+                <h2>Different chapters.<br><em>One journey.</em></h2>
+                <p>
+                    From reflecting on my experiences to developing practical
+                    skills, each section documents a different part of my growth.
+                </p>
+            </div>
+
+            <div class="quick-links">
+                <a class="quick-card" href="cv.html">
+                    <span class="card-number">01 / PROFILE</span>
+                    <h3>My CV & Experience</h3>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="quick-card" href="individual-reflection.html">
+                    <span class="card-number">02 / GROWTH</span>
+                    <h3>Individual Reflection</h3>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="quick-card" href="group-reflection.html">
+                    <span class="card-number">03 / TEAMWORK</span>
+                    <h3>Group Reflection</h3>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="quick-card" href="skills-project.html">
+                    <span class="card-number">04 / PRACTICE</span>
+                    <h3>Skills Project</h3>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="quick-card" href="application-letter.html">
+                    <span class="card-number">05 / OPPORTUNITY</span>
+                    <h3>Application Letter</h3>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="quick-card" href="email-template.html">
+                    <span class="card-number">06 / COMMUNICATION</span>
+                    <h3>Email Template</h3>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="quick-card" href="study-resources.html">
+                    <span class="card-number">07 / DISCOVERY</span>
+                    <h3>Study Resources</h3>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="quick-card" href="#about">
+                    <span class="card-number">08 / THE BEGINNING</span>
+                    <h3>My Story</h3>
+                    <span class="arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="closing">
+            <div class="eyebrow">A work in progress</div>
+            <h2>I'm not where I want to be <em>yet.</em><br>But I'm building towards it.</h2>
+            <p>
+                Every new concept, every difficult problem and every opportunity
+                to learn brings me closer to the professional I hope to become.
+            </p>
+            <a href="cv.html" class="button">
+                TAKE A LOOK AT MY CV ↗
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <span>© 2026 <strong>Larona Thabo</strong></span>
+        <span>Business Intelligence & Data Analytics · BAC</span>
+        <span>Made with curiosity and a little cherry sweetness. 🍒</span>
+    </footer>
+
+</body>
+</html>
