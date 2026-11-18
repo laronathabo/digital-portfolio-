@@ -1,0 +1,726 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Larona Thabo's application letter for a Data Analyst industrial attachment in the banking industry.">
+  <title>Application Letter | Larona Thabo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cherry: #B21E35;
+      --raspberry: #EF476F;
+      --blush: #F4A6B8;
+      --cream: #FFF0E5;
+      --burgundy: #351C2A;
+      --white: #FFFFFF;
+      --ink: #38262F;
+      --muted: #866F79;
+      --line: rgba(53, 28, 42, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--burgundy);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(53, 28, 42, 0.96);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 240, 229, 0.12);
+    }
+
+    .nav-wrap {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--cream);
+      font: 800 1.2rem "Playfair Display", serif;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--blush);
+      font: 700 0.63rem "DM Sans", sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 7px;
+    }
+
+    .nav-links a {
+      color: var(--cream);
+      padding: 7px 10px;
+      border-radius: 25px;
+      font-size: 0.76rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--raspberry);
+      color: var(--burgundy);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 5% 38px;
+      color: var(--cream);
+    }
+
+    .eyebrow {
+      color: var(--blush);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .hero h1 {
+      font: 800 clamp(2.8rem, 7vw, 5.5rem)/1.08 "Playfair Display", serif;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 em {
+      color: var(--blush);
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 640px;
+      color: #E8D4DC;
+      font-size: 0.93rem;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      margin-top: 23px;
+      padding: 8px 13px;
+      border: 1px solid rgba(244, 166, 184, 0.4);
+      border-radius: 30px;
+      color: var(--blush);
+      font-size: 0.73rem;
+      font-weight: 700;
+    }
+
+    .workspace {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 5% 75px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 265px;
+      align-items: start;
+      gap: 30px;
+    }
+
+    .letter-paper {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+      padding: clamp(25px, 5vw, 58px);
+      border-radius: 3px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+    }
+
+    .letter-paper::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 7px;
+      background: var(--cherry);
+    }
+
+    .letter-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      padding-bottom: 27px;
+      border-bottom: 1px solid rgba(53, 28, 42, 0.18);
+      margin-bottom: 28px;
+    }
+
+    .sender-name {
+      color: var(--cherry);
+      font: 700 clamp(1.5rem, 3vw, 2rem) "Playfair Display", serif;
+      margin-bottom: 5px;
+    }
+
+    .sender-details {
+      color: var(--muted);
+      font-size: 0.77rem;
+      overflow-wrap: anywhere;
+    }
+
+    .letter-mark {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(178, 30, 53, 0.35);
+      border-radius: 50%;
+      color: var(--cherry);
+      font-size: 1.5rem;
+      flex: 0 0 55px;
+    }
+
+    .letter-date {
+      color: var(--muted);
+      font-size: 0.83rem;
+      margin-bottom: 23px;
+    }
+
+    .recipient {
+      margin-bottom: 23px;
+    }
+
+    .recipient strong {
+      display: block;
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+
+    .recipient p {
+      color: #68535E;
+      font-size: 0.84rem;
+    }
+
+    .subject {
+      margin: 25px 0;
+      padding: 15px 17px;
+      background: rgba(178, 30, 53, 0.07);
+      border-left: 3px solid var(--cherry);
+      font-size: 0.87rem;
+    }
+
+    .subject strong {
+      display: block;
+      color: var(--cherry);
+      font-size: 0.68rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .letter-body p {
+      margin-bottom: 18px;
+      font-size: 0.9rem;
+      color: #4F3A44;
+    }
+
+    .letter-body p.salutation {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .letter-body p.signoff {
+      margin-bottom: 5px;
+    }
+
+    .signature {
+      margin-top: 22px;
+      color: var(--cherry);
+      font: italic 700 1.55rem "Playfair Display", serif;
+    }
+
+    .signature-name {
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .signature-role {
+      color: var(--muted);
+      font-size: 0.76rem;
+      margin-top: 3px;
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 17px;
+    }
+
+    .side-card {
+      padding: 23px;
+      border: 1px solid rgba(255, 240, 229, 0.13);
+      border-radius: 18px;
+      color: var(--cream);
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .side-card h2 {
+      font: 700 1.3rem "Playfair Display", serif;
+      margin-bottom: 13px;
+    }
+
+    .side-card p {
+      color: #E8D4DC;
+      font-size: 0.81rem;
+    }
+
+    .side-label {
+      color: var(--blush);
+      font-size: 0.67rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 9px;
+    }
+
+    .strength-list {
+      list-style: none;
+      display: grid;
+      gap: 11px;
+      margin-top: 17px;
+    }
+
+    .strength-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #F4E4E9;
+      font-size: 0.8rem;
+    }
+
+    .strength-list li span {
+      color: var(--blush);
+    }
+
+    .action-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      padding: 13px 15px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font: 800 0.81rem "DM Sans", sans-serif;
+      transition: 0.2s ease;
+      text-align: center;
+    }
+
+    .action-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .print-button {
+      background: var(--raspberry);
+      color: var(--burgundy);
+    }
+
+    .email-button {
+      margin-top: 10px;
+      background: var(--cream);
+      color: var(--burgundy);
+    }
+
+    .checklist {
+      padding-left: 17px;
+      color: #E8D4DC;
+      font-size: 0.79rem;
+    }
+
+    .checklist li {
+      padding: 5px 0;
+    }
+
+    .next-pages {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 5% 55px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .page-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 30px;
+      font-size: 0.81rem;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .page-link:hover {
+      transform: translateY(-3px);
+    }
+
+    .page-link.secondary {
+      color: var(--cream);
+      border: 1px solid rgba(255, 240, 229, 0.2);
+    }
+
+    .page-link.primary {
+      color: var(--burgundy);
+      background: var(--blush);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 240, 229, 0.12);
+      color: var(--cream);
+      padding: 25px 5%;
+      text-align: center;
+      font-size: 0.77rem;
+    }
+
+    footer span {
+      color: var(--blush);
+    }
+
+    @media (max-width: 900px) {
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 5px;
+      }
+
+      .nav-links a {
+        font-size: 0.68rem;
+        padding: 6px 8px;
+      }
+
+      .hero {
+        padding-top: 45px;
+      }
+
+      .workspace {
+        padding-top: 5px;
+      }
+
+      .letter-top {
+        gap: 10px;
+      }
+
+      .letter-mark {
+        width: 43px;
+        height: 43px;
+        flex-basis: 43px;
+      }
+
+      .sidebar {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .topbar,
+      .hero,
+      .sidebar,
+      .next-pages,
+      footer {
+        display: none !important;
+      }
+
+      .workspace {
+        display: block;
+        max-width: none;
+        padding: 0;
+      }
+
+      .letter-paper {
+        padding: 25px;
+        box-shadow: none;
+        border-radius: 0;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .letter-body p {
+        font-size: 10.5pt;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="nav-wrap">
+      <a href="index.html" class="brand">
+        Larona Thabo
+        <span>My learning journal</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="individual-reflection.html">Individual</a>
+        <a href="group-reflection.html">Group Work</a>
+        <a href="skills-project.html">Skills Project</a>
+        <a href="application-letter.html" class="active">Application</a>
+        <a href="email-template.html">Email</a>
+        <a href="study-resources.html">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Page 06 · Professional Communication</p>
+
+    <h1>Opening doors,<br><em>one application at a time.</em></h1>
+
+    <p>
+      A professional introduction built around my interest in data,
+      my developing analytical skills and my ambition to contribute
+      to the banking industry.
+    </p>
+
+    <span class="hero-tag">INDUSTRIAL ATTACHMENT · DATA ANALYST INTERN</span>
+  </section>
+
+  <main class="workspace">
+
+    <article class="letter-paper">
+
+      <div class="letter-top">
+        <div>
+          <h2 class="sender-name">Larona Thabo</h2>
+          <p class="sender-details">
+            Business Intelligence &amp; Data Analytics Student<br>
+            Botswana Accountancy College<br>
+            Email: thabolarona1@icloud.com
+          </p>
+        </div>
+
+        <div class="letter-mark" aria-hidden="true">✦</div>
+      </div>
+
+      <p class="letter-date">Date: [Insert application date]</p>
+
+      <div class="recipient">
+        <strong>The Recruitment Manager</strong>
+        <p>Human Resources Department</p>
+        <p>[Name of Bank]</p>
+        <p>[Bank Address]</p>
+        <p>Botswana</p>
+      </div>
+
+      <div class="subject">
+        <strong>Re: Application for Industrial Attachment</strong>
+        Data Analyst Intern — Banking, Business Intelligence and Data Analytics
+      </div>
+
+      <div class="letter-body">
+
+        <p class="salutation">Dear Hiring Manager,</p>
+
+        <p>
+          I am writing to express my interest in an industrial attachment
+          opportunity as a Data Analyst Intern within your organisation.
+          I am currently a first-year Business Intelligence and Data
+          Analytics student at Botswana Accountancy College, and I am
+          eager to gain practical experience that will help me connect
+          my academic learning with real business challenges.
+        </p>
+
+        <p>
+          My interest in data analytics comes from my curiosity about
+          how information can help organisations understand their customers,
+          evaluate performance and make informed decisions. I am particularly
+          interested in the banking industry because of the important role
+          that accurate information and meaningful analysis can play in
+          understanding customer needs and improving service delivery.
+        </p>
+
+        <p>
+          Through my studies, I am developing foundational skills in
+          Microsoft Excel, basic SQL, report writing and data-related
+          problem-solving. I am also learning to approach challenges
+          critically, pay attention to detail and communicate ideas clearly.
+          I understand that I am still at the beginning of my professional
+          journey, and I am prepared to learn from experienced professionals,
+          accept constructive feedback and improve through practical work.
+        </p>
+
+        <p>
+          In addition to my academic development, serving as Deputy Head
+          Girl at Saint Kizito Catholic School in 2025 helped me appreciate
+          responsibility, communication and respectful leadership.
+          I believe these qualities, together with my willingness to work
+          hard and collaborate with others, would help me contribute
+          positively as an intern.
+        </p>
+
+        <p>
+          I would value the opportunity to observe professional analytical
+          practices, support appropriate tasks and develop a better
+          understanding of how data is used in banking operations.
+          I would welcome the opportunity to discuss my application and
+          provide any additional information required.
+        </p>
+
+        <p>
+          Thank you for considering my application. I look forward to
+          the possibility of learning from your team and contributing
+          with enthusiasm, commitment and a willingness to grow.
+        </p>
+
+        <p class="signoff">Yours faithfully,</p>
+
+        <div class="signature">Larona Thabo</div>
+        <p class="signature-name">Larona Thabo</p>
+        <p class="signature-role">
+          Business Intelligence &amp; Data Analytics Student
+        </p>
+
+      </div>
+    </article>
+
+    <aside class="sidebar">
+
+      <section class="side-card">
+        <p class="side-label">The application</p>
+        <h2>My next opportunity.</h2>
+
+        <p>
+          This letter introduces my academic background, transferable
+          skills and interest in gaining practical exposure to data
+          analysis in banking.
+        </p>
+
+        <ul class="strength-list">
+          <li><span>✦</span> Analytical curiosity</li>
+          <li><span>✦</span> Willingness to learn</li>
+          <li><span>✦</span> Responsibility and teamwork</li>
+          <li><span>✦</span> Interest in customer-focused insights</li>
+        </ul>
+      </section>
+
+      <section class="side-card">
+        <p class="side-label">Document tools</p>
+        <h2>Make it yours.</h2>
+
+        <p>
+          Print the letter or save it as a PDF after filling in the
+          recipient's details and confirming the application information.
+        </p>
+
+        <button class="action-button print-button" onclick="window.print()">
+          ↗ Print / Save as PDF
+        </button>
+
+        <button class="action-button email-button" onclick="copyEmail()">
+          Copy email address
+        </button>
+      </section>
+
+      <section class="side-card">
+        <p class="side-label">Before sending</p>
+        <h2>Final checks.</h2>
+
+        <ul class="checklist">
+          <li>Insert the correct bank name.</li>
+          <li>Add the real application date.</li>
+          <li>Check the attachment dates and requirements.</li>
+          <li>Attach an updated CV.</li>
+          <li>Confirm that every statement is accurate.</li>
+        </ul>
+      </section>
+
+    </aside>
+
+  </main>
+
+  <div class="next-pages">
+    <a href="skills-project.html" class="page-link secondary">
+      ← Skills Project
+    </a>
+
+    <a href="email-template.html" class="page-link primary">
+      Next: Email Template →
+    </a>
+  </div>
+
+  <footer>
+    <p>Larona Thabo · <span>Preparing for what comes next.</span></p>
+    <p>Business Intelligence &amp; Data Analytics · Botswana Accountancy College</p>
+  </footer>
+
+  <script>
+    function copyEmail() {
+      const email = "thabolarona1@icloud.com";
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email)
+          .then(() => alert("Email address copied: " + email))
+          .catch(() => showEmail(email));
+      } else {
+        showEmail(email);
+      }
+    }
+
+    function showEmail(email) {
+      window.prompt("Copy this email address:", email);
+    }
+  </script>
+
+</body>
+</html>
