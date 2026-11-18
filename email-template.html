@@ -1,0 +1,604 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Template | Larona Thabo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cherry: #B21E35;
+      --raspberry: #EF476F;
+      --blush: #F4A6B8;
+      --cream: #FFF0E5;
+      --burgundy: #351C2A;
+      --white: #FFFFFF;
+      --muted: #806D73;
+      --line: #E9D7D9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--burgundy);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-strip {
+      height: 6px;
+      background: linear-gradient(
+        90deg,
+        var(--burgundy),
+        var(--cherry),
+        var(--raspberry),
+        var(--blush)
+      );
+    }
+
+    header {
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 240, 229, 0.96);
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--burgundy);
+    }
+
+    .brand span {
+      color: var(--cherry);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    nav a {
+      font-size: 0.75rem;
+      padding: 7px 10px;
+      border-radius: 30px;
+      color: var(--burgundy);
+      transition: 0.25s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: var(--cherry);
+      color: var(--white);
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: auto;
+      padding: 65px 7% 85px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--cherry);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 7vw, 5rem);
+      letter-spacing: -2px;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    h1 em {
+      color: var(--cherry);
+      font-weight: 500;
+    }
+
+    .intro {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 38px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(250px, 0.7fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .email-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(53, 28, 42, 0.08);
+    }
+
+    .email-top {
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 24px 28px;
+    }
+
+    .email-top small {
+      display: block;
+      color: var(--blush);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.67rem;
+      margin-bottom: 7px;
+    }
+
+    .email-top h2 {
+      font-size: 1.8rem;
+    }
+
+    .email-meta {
+      padding: 22px 28px 10px;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 78px minmax(0, 1fr);
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #F1E7E8;
+      font-size: 0.86rem;
+      overflow-wrap: anywhere;
+    }
+
+    .meta-row:last-child {
+      border-bottom: none;
+    }
+
+    .meta-label {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .meta-value {
+      color: var(--burgundy);
+    }
+
+    .subject {
+      font-weight: 700;
+    }
+
+    .message {
+      margin: 8px 28px 26px;
+      padding: 25px;
+      background: #FFFAF7;
+      border: 1px solid #F2E4E1;
+      border-radius: 14px;
+      color: #58454C;
+      font-size: 0.91rem;
+    }
+
+    .message p {
+      margin-bottom: 16px;
+    }
+
+    .message p:last-child {
+      margin-bottom: 0;
+    }
+
+    .signature {
+      color: var(--burgundy);
+      font-weight: 600;
+    }
+
+    .email-actions {
+      padding: 0 28px 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    button {
+      border: none;
+      border-radius: 30px;
+      padding: 12px 18px;
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary-btn {
+      background: var(--cherry);
+      color: var(--white);
+    }
+
+    .secondary-btn {
+      background: var(--cream);
+      color: var(--burgundy);
+      border: 1px solid var(--line);
+    }
+
+    .side-column {
+      display: grid;
+      gap: 20px;
+    }
+
+    .side-card {
+      padding: 26px;
+      border-radius: 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .side-card.pink {
+      background: #FBE0E5;
+      border-color: #F4C4CF;
+    }
+
+    .side-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+    }
+
+    .side-card p,
+    .side-card li {
+      font-size: 0.86rem;
+      color: #705D64;
+    }
+
+    .side-card ul {
+      padding-left: 18px;
+      margin-top: 12px;
+    }
+
+    .side-card li {
+      margin-bottom: 9px;
+    }
+
+    .tip-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      color: var(--cherry);
+      margin-bottom: 5px;
+    }
+
+    .reminder {
+      padding: 18px;
+      margin-top: 24px;
+      border-left: 4px solid var(--raspberry);
+      background: #FFF8F5;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.83rem;
+      color: #705D64;
+    }
+
+    footer {
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 26px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.78rem;
+    }
+
+    footer span {
+      color: var(--blush);
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav a {
+        font-size: 0.72rem;
+      }
+
+      .page {
+        padding-top: 45px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .meta-row {
+        grid-template-columns: 65px minmax(0, 1fr);
+      }
+
+      .email-meta {
+        padding: 18px 18px 8px;
+      }
+
+      .message {
+        margin: 8px 18px 22px;
+        padding: 18px;
+      }
+
+      .email-actions {
+        padding: 0 18px 22px;
+      }
+
+      .email-top {
+        padding: 22px 18px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      header, footer, .side-column, .email-actions,
+      .intro, .eyebrow, .page > h1, .page > .intro {
+        display: none !important;
+      }
+
+      .page {
+        padding: 0;
+        max-width: none;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      .email-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-strip"></div>
+
+  <header>
+    <a class="brand" href="index.html">Larona <span>Thabo</span></a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="cv.html">CV</a>
+      <a href="individual-reflection.html">Reflection</a>
+      <a href="group-reflection.html">Group Work</a>
+      <a href="skills-project.html">Skills Project</a>
+      <a href="application-letter.html">Application Letter</a>
+      <a class="active" href="email-template.html">Email</a>
+      <a href="study-resources.html">Resources</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <span class="eyebrow">Page 07 · Professional Communication</span>
+
+    <h1>A good opportunity can begin with <em>one email.</em></h1>
+
+    <p class="intro">
+      Professional communication is part of presenting myself as a developing
+      Business Intelligence and Data Analytics student. This email template
+      demonstrates how I would introduce myself to a bank and enquire about
+      possible industrial attachment opportunities.
+    </p>
+
+    <div class="layout">
+      <section class="email-card" aria-label="Professional email example">
+        <div class="email-top">
+          <small>Email composition · Internship enquiry</small>
+          <h2>New message</h2>
+        </div>
+
+        <div class="email-meta">
+          <div class="meta-row">
+            <span class="meta-label">From</span>
+            <span class="meta-value">thabolarona1@icloud.com</span>
+          </div>
+
+          <div class="meta-row">
+            <span class="meta-label">To</span>
+            <span class="meta-value">[Recruitment Email Address]</span>
+          </div>
+
+          <div class="meta-row">
+            <span class="meta-label">Subject</span>
+            <span class="meta-value subject" id="emailSubject">
+              Enquiry About Industrial Attachment – Data Analyst Intern
+            </span>
+          </div>
+        </div>
+
+        <div class="message" id="emailBody">
+          <p>Dear Recruitment Team,</p>
+
+          <p>
+            I hope this email finds you well.
+          </p>
+
+          <p>
+            My name is Larona Thabo, and I am a first-year student at
+            Botswana Accountancy College, pursuing Business Intelligence
+            and Data Analytics. I am writing to enquire about the possibility
+            of undertaking an industrial attachment within your organisation,
+            particularly in a data analysis or business intelligence-related role.
+          </p>
+
+          <p>
+            I am interested in understanding how banks use data to identify
+            customer needs, monitor performance and support informed business
+            decisions. Through my studies, I am developing foundational skills
+            in Microsoft Excel, basic SQL, reporting and data presentation.
+            I am eager to strengthen these skills through practical experience
+            and learn from professionals in the field.
+          </p>
+
+          <p>
+            I would appreciate it if you could advise me whether any suitable
+            industrial attachment opportunities are available, or whether
+            there is a formal application process I should follow.
+          </p>
+
+          <p>
+            Thank you for your time and consideration. I would be grateful
+            for any guidance you can provide.
+          </p>
+
+          <p>Kind regards,</p>
+
+          <p class="signature">
+            Larona Thabo<br>
+            Business Intelligence and Data Analytics Student<br>
+            Botswana Accountancy College<br>
+            thabolarona1@icloud.com
+          </p>
+        </div>
+
+        <div class="email-actions">
+          <button class="primary-btn" type="button" onclick="copySubject()">
+            Copy subject
+          </button>
+
+          <button class="secondary-btn" type="button" onclick="copyBody()">
+            Copy email message
+          </button>
+
+          <button class="secondary-btn" type="button" onclick="window.print()">
+            Print example
+          </button>
+        </div>
+      </section>
+
+      <aside class="side-column">
+        <div class="side-card pink">
+          <div class="tip-number">01</div>
+          <h3>Keep it clear.</h3>
+          <p>
+            A professional email should explain who you are, why you are
+            contacting the organisation and what response you are hoping for.
+          </p>
+        </div>
+
+        <div class="side-card">
+          <div class="tip-number">02</div>
+          <h3>Before you send</h3>
+          <ul>
+            <li>Replace the recipient placeholder with a verified address.</li>
+            <li>Check the bank's correct recruitment or attachment process.</li>
+            <li>Use a clear, relevant subject line.</li>
+            <li>Attach your CV if requested or appropriate.</li>
+            <li>Proofread the message and confirm your contact details.</li>
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <div class="tip-number">03</div>
+          <h3>My communication goal</h3>
+          <p>
+            I want my communication to reflect professionalism, respect and
+            genuine willingness to learn. Even when I am asking about an
+            opportunity rather than applying for an advertised position,
+            I can make my purpose clear and communicate confidently.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="reminder">
+      <strong>Portfolio note:</strong> This is a sample email, not a record
+      of an email already sent. The recipient address is a placeholder.
+      Review the wording and make sure it accurately reflects your current
+      skills and availability before using it.
+    </div>
+  </main>
+
+  <footer>
+    <p>Larona Thabo <span>·</span> Learning with purpose.</p>
+    <p>Business Intelligence &amp; Data Analytics · BAC</p>
+  </footer>
+
+  <script>
+    async function copyText(text, button) {
+      const originalText = button.textContent;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = "Copied!";
+      } catch (error) {
+        const temporary = document.createElement("textarea");
+        temporary.value = text;
+        temporary.style.position = "fixed";
+        temporary.style.opacity = "0";
+        document.body.appendChild(temporary);
+        temporary.select();
+
+        try {
+          const successful = document.execCommand("copy");
+          button.textContent = successful ? "Copied!" : "Please copy manually";
+        } catch (copyError) {
+          button.textContent = "Please copy manually";
+        }
+
+        temporary.remove();
+      }
+
+      setTimeout(() => {
+        button.textContent = originalText;
+      }, 1800);
+    }
+
+    function copySubject() {
+      const subject = document.getElementById("emailSubject").textContent.trim();
+      copyText(subject, event.currentTarget);
+    }
+
+    function copyBody() {
+      const body = document.getElementById("emailBody").innerText.trim();
+      copyText(body, event.currentTarget);
+    }
+  </script>
+</body>
+</html>
